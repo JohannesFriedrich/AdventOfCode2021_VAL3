@@ -23,17 +23,6 @@
     },
     {
       "mode": 3,
-      "name": "diff",
-      "nodes": [
-        {
-          "start": 96,
-          "end": 219,
-          "isCollapsed": false
-        }
-      ]
-    },
-    {
-      "mode": 3,
       "name": "rollsum",
       "nodes": [
         {
@@ -60,6 +49,43 @@
         {
           "start": 59,
           "end": 150,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "sign",
+      "nodes": [
+        {
+          "start": 95,
+          "end": 333,
+          "isCollapsed": false
+        },
+        {
+          "start": 133,
+          "end": 324,
+          "isCollapsed": false
+        },
+        {
+          "start": 201,
+          "end": 269,
+          "isCollapsed": false
+        },
+        {
+          "start": 274,
+          "end": 314,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "diff",
+      "nodes": [
+        {
+          "start": 96,
+          "end": 219,
           "isCollapsed": false
         }
       ]

@@ -1,3 +1,5 @@
-Layout/
+Layouts/
 Controller1/log/
 Controller1/usr/configs/nginx.key
+Controller1/usr/temp/
+*.cuo

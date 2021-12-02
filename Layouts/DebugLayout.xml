@@ -1,12 +1,12 @@
 ﻿<DockSiteLayout xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" SerializationFormat="ToolWindowsOnly" Version="2">
 	<AutoHideHost />
 	<Content xsi:type="SplitContainer" Orientation="Horizontal" DockedSize="1908,876">
-		<UIElement xsi:type="SplitContainer" Orientation="Vertical" DockedSize="1383,876">
-			<UIElement xsi:type="SplitContainer" Orientation="Horizontal" DockedSize="1565,876">
+		<UIElement xsi:type="SplitContainer" Orientation="Vertical" DockedSize="1604,876">
+			<UIElement xsi:type="SplitContainer" Orientation="Horizontal" DockedSize="1604,876">
 				<UIElement xsi:type="SplitContainer" Orientation="Vertical" DockedSize="1169,876">
 					<UIElement xsi:type="Workspace">
 						<Content xsi:type="TabbedMdiHost">
-							<Content xsi:type="TabbedMdiContainer" SelectedWindowUniqueId="81e3266d-b244-4cde-b20f-a88a32a5f9b0" />
+							<Content xsi:type="TabbedMdiContainer" SelectedWindowUniqueId="51358ba7-a356-483d-8bfd-91c4dc9b5d56" />
 						</Content>
 					</UIElement>
 					<UIElement xsi:type="ToolWindowContainer" DockedSize="0,0">
@@ -31,7 +31,7 @@
 						<UIElement xsi:type="Track" UniqueId="59225f2f-c9b1-4148-b052-0c0a6b60a81b" />
 					</UIElement>
 					<UIElement xsi:type="ToolWindowContainer" DockedSize="0,0">
-						<UIElement xsi:type="Track" UniqueId="c2d491ae-818b-451a-93fc-7ea7eb22d456" />
+						<UIElement xsi:type="Track" ContainerDockedSize="1169,200" UniqueId="c2d491ae-818b-451a-93fc-7ea7eb22d456" />
 					</UIElement>
 				</UIElement>
 				<UIElement xsi:type="SplitContainer" Orientation="Vertical" DockedSize="391,876">
@@ -49,7 +49,7 @@
 				<UIElement xsi:type="Track" UniqueId="4478f260-d6ed-45ea-8321-f075dae88982" />
 			</UIElement>
 		</UIElement>
-		<UIElement xsi:type="ToolWindowContainer" DockedSize="519,200" SelectedWindowUniqueId="d4dc1bd1-b56d-4e9d-b260-166dfd32f19c">
+		<UIElement xsi:type="ToolWindowContainer" DockedSize="298,200" SelectedWindowUniqueId="d4dc1bd1-b56d-4e9d-b260-166dfd32f19c">
 			<UIElement xsi:type="ToolWindowRef" UniqueId="d4dc1bd1-b56d-4e9d-b260-166dfd32f19c" />
 		</UIElement>
 	</Content>
@@ -82,15 +82,15 @@
 		<ToolWindow UniqueId="6f090ec0-c99e-4aca-973e-905be55b973c" Name="CallTree" IsOpen="false" LastActiveDateTime="2021-01-14T11:33:28.1507652+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="1a5ef5f6-b295-4443-9b5d-5e50bcc004f8" Name="Geometry" IsOpen="true" LastActiveDateTime="2018-02-28T09:53:37.8265239+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="06d03f51-3499-4aaf-8fcf-f5474d1ce325" Name="Data" IsOpen="true" LastActiveDateTime="2021-12-01T09:10:16.9562536+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
-		<ToolWindow UniqueId="3dee95ba-ff20-4757-9457-68b527aaa48d" Name="CellExplorer" IsOpen="true" LastActiveDateTime="2021-12-01T10:53:12.7921176+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
+		<ToolWindow UniqueId="3dee95ba-ff20-4757-9457-68b527aaa48d" Name="CellExplorer" IsOpen="true" LastActiveDateTime="2021-12-02T23:09:21.0948312+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="25838486-425f-49d2-91b1-32803c688129" Name="FindAndReplace" IsOpen="false" LastActiveDateTime="2021-07-10T20:51:30.1059231+02:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="4478f260-d6ed-45ea-8321-f075dae88982" Name="FindResults" IsOpen="false" LastActiveDateTime="2021-02-15T13:57:00.4126694+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="59225f2f-c9b1-4148-b052-0c0a6b60a81b" Name="Breakpoints" ContainerDockedSize="732,258" IsOpen="true" LastActiveDateTime="2019-01-14T12:07:38.1693193+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="bfbc6b46-bb59-4f38-a8ab-20d12fa07f9b" Name="CallStack" ContainerDockedSize="732,258" IsOpen="true" LastActiveDateTime="2019-01-14T12:07:39.8963531+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
-		<ToolWindow UniqueId="c2d491ae-818b-451a-93fc-7ea7eb22d456" Name="CommandLine" IsOpen="false" LastActiveDateTime="2019-01-14T12:07:38.6888564+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
-		<ToolWindow UniqueId="8eca5096-672b-4643-a306-8d7da95e9668" Name="Locals" ContainerDockedSize="715,258" IsOpen="true" LastActiveDateTime="2021-12-01T22:54:01.1334118+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
-		<ToolWindow UniqueId="33bb7849-0192-4e2f-9544-51818b96f690" Name="Tasks" ContainerDockedSize="732,258" IsOpen="true" LastActiveDateTime="2021-12-01T22:54:43.8524137+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
-		<ToolWindow UniqueId="db78d39b-05ff-4025-b228-7f0246d53e5f" Name="Watches" ContainerDockedSize="715,258" IsOpen="true" LastActiveDateTime="2021-12-01T16:55:21.8237625+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
+		<ToolWindow UniqueId="c2d491ae-818b-451a-93fc-7ea7eb22d456" Name="CommandLine" ContainerDockedSize="1169,200" IsOpen="false" LastActiveDateTime="2021-12-02T23:00:21.7688818+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
+		<ToolWindow UniqueId="8eca5096-672b-4643-a306-8d7da95e9668" Name="Locals" ContainerDockedSize="715,258" IsOpen="true" LastActiveDateTime="2021-12-02T22:59:04.939402+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
+		<ToolWindow UniqueId="33bb7849-0192-4e2f-9544-51818b96f690" Name="Tasks" ContainerDockedSize="732,258" IsOpen="true" LastActiveDateTime="2021-12-02T23:04:16.485882+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
+		<ToolWindow UniqueId="db78d39b-05ff-4025-b228-7f0246d53e5f" Name="Watches" ContainerDockedSize="715,258" IsOpen="true" LastActiveDateTime="2021-12-02T22:59:03.7773955+01:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="af298c51-4bd4-4322-aaaa-63c9f9c1b07b" Name="BehaviorsViewInitializer" ContainerDockedSize="327,200" IsOpen="false" LastActiveDateTime="2021-05-25T21:02:26.2478778+02:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="5fb21f48-98a0-4269-8dbb-f74896afc90d" Name="EditPosition" IsOpen="false" LastActiveDateTime="2021-05-04T15:46:38.56323+02:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="f6ad8484-8169-4b52-8a45-c0c34b8ad876" Name="Jog" IsOpen="false" LastActiveDateTime="2021-10-01T13:01:08.1394548+02:00" State="Docked" />
@@ -100,7 +100,7 @@
 		<ToolWindow UniqueId="9cdb7a09-d8f8-46d1-afd7-6f1dece1fbc8" Name="AioControlPanel" IsOpen="false" LastActiveDateTime="2019-06-17T12:40:29.5658613+02:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="4f5d8d9a-ddec-400a-bbb7-ad867f6fb6e0" Name="DioControlPanel" IsOpen="false" LastActiveDateTime="2021-07-10T20:37:56.4072483+02:00" StandardMdiBounds="0,0,300,200" State="Docked" />
 		<ToolWindow UniqueId="c9274c85-4013-492f-90d0-c1edab5a8f97" Name="EmulatorVersions" ContainerDockedSize="1538,1200" IsOpen="false" LastActiveDateTime="2021-11-29T09:38:21.0331386+01:00" StandardMdiBounds="0,0,300,200" State="Document" />
-		<ToolWindow UniqueId="d4dc1bd1-b56d-4e9d-b260-166dfd32f19c" Name="_DN_8dfc529521fb53d8ddf31af6d601f860" ContainerDockedSize="519,200" IsOpen="true" LastActiveDateTime="2021-12-01T16:54:34.8321063+01:00" State="Docked">
+		<ToolWindow UniqueId="d4dc1bd1-b56d-4e9d-b260-166dfd32f19c" Name="_DN_8dfc529521fb53d8ddf31af6d601f860" ContainerDockedSize="298,200" IsOpen="true" LastActiveDateTime="2021-12-02T23:04:06.9549227+01:00" State="Docked">
 			<Tag xsi:type="xsd:string">SRS.Emulator.Views.EmulatorCs9View?Controller=Controller1</Tag>
 		</ToolWindow>
 	</ToolWindows>

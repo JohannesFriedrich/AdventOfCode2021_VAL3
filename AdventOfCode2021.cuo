@@ -4,6 +4,9 @@
     <Application>Disk://Day1/Day1.pjx</Application>
     <Application>Disk://math/math.pjx</Application>
     <Application>Disk://helpers/helpers.pjx</Application>
+    <Application>Disk://types/lists/lists.pjx</Application>
+    <Application>Disk://types/lists_string_num/lists_string_num.pjx</Application>
+    <Application>Disk://string/string.pjx</Application>
   </Controller>
   <Option Name="DataTreeView">
     <Nodes>
@@ -23,10 +26,10 @@
       <Node Path="AdventOfCode2021\Controller1\Disk:##Day1#Day1.pjx" IsExpanded="true" />
       <Node Path="AdventOfCode2021\Controller1\Disk:##Day1#Day1.pjx\interface" IsExpanded="true" />
       <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx\printNum" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx\uniqueNum" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx\vec2num" IsExpanded="true" />
       <Node Path="AdventOfCode2021\Controller1\Disk:##math#math.pjx" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##string#string.pjx" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##string#string.pjx\matchString" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##string#string.pjx\splitString" IsExpanded="true" />
     </Nodes>
   </Option>
   <Option Name="GeometryView">

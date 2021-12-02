@@ -3,8 +3,10 @@
   <Parameters version="s8.13.1Cs9_BS2800" stackSize="5000" millimeterUnit="true" />
   <Programs>
     <Program file="splitString.pgx" />
+    <Program file="splitWord.pgx" />
     <Program file="start.pgx" />
     <Program file="stop.pgx" />
+    <Program file="trimString.pgx" />
   </Programs>
   <Database>
     <Data file="string.dtx" />

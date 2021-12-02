@@ -12,6 +12,9 @@
   
   call splitString(sInput, " ", lResult)
   
+  call splitWord(sInput, lResult)
+  
+  call trimString(sInput, sResult)
   
 end]]></Code>
   </Program>

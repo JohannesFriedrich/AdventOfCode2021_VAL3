@@ -9,21 +9,29 @@
       <Local name="l_nCoutner" type="num" xsi:type="array" size="1" />
       <Local name="l_nElement" type="num" xsi:type="array" size="1" />
       <Local name="l_nLength" type="num" xsi:type="array" size="1" />
+      <Local name="l_sString" type="string" xsi:type="array" size="1" />
     </Locals>
     <Code><![CDATA[begin
   
   l_nLength = size(x_nInput)
   l_nCoutner = 0
   resize(x_nResult,1,1)
+  resize(sStringBuffer,1,1)
   
   for l_nElement = 0 to l_nLength
-    if l_nCoutner != 0
-      append(x_nResult)
+    if l_nCoutner ==0
+      sStringBuffer[l_nCoutner] = toString(".6",x_nInput[l_nElement])
+      l_nCoutner = l_nCoutner+1
+    else
+      l_sString =  toString(".6",x_nInput[l_nElement])
+      
+      //call 
+      
     endIf
     
-    l_nCoutner = l_nCoutner+1
     
-      x_nResult[l_nCoutner] = l_nElement
+    
+    x_nResult[l_nCoutner] = l_nElement
   endFor
   
 end]]></Code>
