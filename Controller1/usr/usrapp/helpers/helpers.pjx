@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s8.13.1Cs9_BS2800" stackSize="5000" millimeterUnit="true" />
+  <Programs>
+    <Program file="allBool.pgx" />
+    <Program file="anyBool.pgx" />
+    <Program file="bool2num.pgx" />
+    <Program file="compare.pgx" />
+    <Program file="countBool.pgx" />
+    <Program file="extractNum.pgx" />
+    <Program file="num2bool.pgx" />
+    <Program file="printBool.pgx" />
+    <Program file="printNum.pgx" />
+    <Program file="printStr.pgx" />
+    <Program file="range.pgx" />
+    <Program file="readFile.pgx" />
+    <Program file="start.pgx" />
+    <Program file="stop.pgx" />
+    <Program file="uniqueNum.pgx" />
+    <Program file="vec2num.pgx" />
+  </Programs>
+  <Database>
+    <Data file="helpers.dtx" />
+  </Database>
+  <Libraries />
+</Project>

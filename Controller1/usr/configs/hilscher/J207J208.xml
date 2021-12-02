@@ -1,0 +1,29 @@
+<ProcessData xmlns="x-schema:ProcessDataSchema.xml"><Version major="1" minor="0">
+	</Version><Adapter systemTag="2d2124a7-679c-4f8f-a1a1-d2c44b504df4" displayName="J207J208 RE/PNS[NETX 51 RE/PNS V3.5.35 - V3.x]&lt;tx2&gt;" byteOrder="big" configMD5="0BACBFEF69E3A4D7FAA26FB2484B7777" deviceAccessPath="" stationAddress="Addr tx2"><Property id="6003" type="8" value="QwBJAEYAWABfAEQAUgBWAA=="/>
+		<Module systemTag="217a69cc-bd01-4edf-bb65-04260475628e" displayName="1 Byte Input" moduleType="1 Byte Input" moduleAddress="Slot 1">
+			<Module systemTag="a234b303-4ea8-425a-af63-9f4e73cb1dc9" displayName="1 Byte Input" moduleType="1 Byte Input" moduleAddress="Subslot 1">
+				<Property id="6102" type="19" value="AAAAAA=="/><Signal systemTag="510985f2-5a1d-4d97-8cd5-f7d92b1afaae" displayName="Inputs" signalType="output" signalAccessPath="0" dataType="byte" arrayElements="1" opc="1">
+					<Property id="6103" type="19" value="AAAAAA=="/>
+				</Signal>
+			</Module>
+		</Module>
+		<Status systemTag="c538e299-e8f3-46d4-a1a9-5ebbd839883f" displayName="Status">
+			<Signal systemTag="a0583927-00d4-4b59-963a-2dd691457c3a" displayName="Communication Change of State" signalType="input" signalAccessPath="0" dataType="unsigned32" opc="0" blockNumber="0">
+			</Signal>
+			<Signal systemTag="748b65b7-f1db-4002-aa78-146816b5653d" displayName="Communication State" signalType="input" signalAccessPath="4" dataType="unsigned32" opc="0" blockNumber="0">
+			</Signal>
+			<Signal systemTag="80dcfada-12e4-458a-92c3-604349270e49" displayName="Communication Error" signalType="input" signalAccessPath="8" dataType="unsigned32" opc="0" blockNumber="0">
+			</Signal>
+			<Signal systemTag="864c991f-f61b-4064-a501-0a38f0d7c817" displayName="Version" signalType="input" signalAccessPath="12" dataType="unsigned16" opc="0" blockNumber="0">
+			</Signal>
+			<Signal systemTag="de8de5db-ba19-4b58-897b-7d175bb218f9" displayName="Watchdog Timeout" signalType="input" signalAccessPath="14" dataType="unsigned16" opc="0" blockNumber="0">
+			</Signal>
+			<Signal systemTag="189d5d56-96ac-4da7-8461-7bbdfc0195eb" displayName="Host Watchdog" signalType="input" signalAccessPath="20" dataType="unsigned32" opc="0" blockNumber="0">
+			</Signal>
+			<Signal systemTag="f0d88941-485c-451a-b0eb-c393337a0292" displayName="Error Count" signalType="input" signalAccessPath="24" dataType="unsigned32" opc="0" blockNumber="0">
+			</Signal>
+			<Signal systemTag="17e72b69-c2e1-4a9e-93e6-5900f8fba248" displayName="Error Log Indicator" signalType="input" signalAccessPath="28" dataType="unsigned32" opc="0" blockNumber="0">
+			</Signal>
+		</Status>
+	</Adapter>
+</ProcessData>

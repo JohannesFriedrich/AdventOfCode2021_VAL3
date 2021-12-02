@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Code><![CDATA[begin
+
+  // read file
+  call util:readFile("Disk://input_day1.txt", sInput)
+  
+  // PUZZLE 1 
+  // vec2num
+  call util:vec2num(sInput, nInput)
+  
+  // calc diff between elements
+  call math:diff(nInput, nResult2)
+  
+  // compare elements if step is >0
+  call util:compare(nResult2, ">", 0, bResult)
+  
+  // count steps > 0
+  call util:countBool(bResult, nResult)
+  ? nResult
+
+  // PUZZLE 2
+  call math:rollsum(nInput, 3, nResult)
+  
+  // calc diff between elements
+  call math:diff(nResult, nResult2)
+  
+  // compare elements if step is >0
+  call util:compare(nResult2, ">", 0, bResult)
+  
+  // count steps > 0
+  call util:countBool(bResult, nResult) 
+  ? nResult
+  
+end]]></Code>
+  </Program>
+</Programs>

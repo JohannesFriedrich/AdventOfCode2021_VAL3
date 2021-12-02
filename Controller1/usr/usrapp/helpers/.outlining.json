@@ -1,0 +1,328 @@
+﻿{
+  "programs": [
+    {
+      "mode": 3,
+      "name": "vec2num",
+      "nodes": [
+        {
+          "start": 94,
+          "end": 268,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "range",
+      "nodes": [
+        {
+          "start": 55,
+          "end": 205,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "printStr",
+      "nodes": [
+        {
+          "start": 43,
+          "end": 112,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "printNum",
+      "nodes": [
+        {
+          "start": 43,
+          "end": 112,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "num2bool",
+      "nodes": [
+        {
+          "start": 115,
+          "end": 339,
+          "isCollapsed": false
+        },
+        {
+          "start": 153,
+          "end": 330,
+          "isCollapsed": false
+        },
+        {
+          "start": 222,
+          "end": 289,
+          "isCollapsed": false
+        },
+        {
+          "start": 294,
+          "end": 320,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "readFile",
+      "nodes": [
+        {
+          "start": 185,
+          "end": 394,
+          "isCollapsed": false
+        },
+        {
+          "start": 246,
+          "end": 334,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "extractNum",
+      "nodes": [
+        {
+          "start": 53,
+          "end": 163,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "countBool",
+      "nodes": [
+        {
+          "start": 59,
+          "end": 177,
+          "isCollapsed": false
+        },
+        {
+          "start": 97,
+          "end": 168,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "compare",
+      "nodes": [
+        {
+          "start": 98,
+          "end": 1048,
+          "isCollapsed": false
+        },
+        {
+          "start": 117,
+          "end": 341,
+          "isCollapsed": false
+        },
+        {
+          "start": 132,
+          "end": 331,
+          "isCollapsed": false
+        },
+        {
+          "start": 174,
+          "end": 318,
+          "isCollapsed": false
+        },
+        {
+          "start": 260,
+          "end": 304,
+          "isCollapsed": false
+        },
+        {
+          "start": 346,
+          "end": 572,
+          "isCollapsed": false
+        },
+        {
+          "start": 362,
+          "end": 562,
+          "isCollapsed": false
+        },
+        {
+          "start": 404,
+          "end": 549,
+          "isCollapsed": false
+        },
+        {
+          "start": 491,
+          "end": 535,
+          "isCollapsed": false
+        },
+        {
+          "start": 577,
+          "end": 801,
+          "isCollapsed": false
+        },
+        {
+          "start": 592,
+          "end": 791,
+          "isCollapsed": false
+        },
+        {
+          "start": 634,
+          "end": 778,
+          "isCollapsed": false
+        },
+        {
+          "start": 720,
+          "end": 764,
+          "isCollapsed": false
+        },
+        {
+          "start": 810,
+          "end": 1036,
+          "isCollapsed": false
+        },
+        {
+          "start": 826,
+          "end": 1026,
+          "isCollapsed": false
+        },
+        {
+          "start": 868,
+          "end": 1013,
+          "isCollapsed": false
+        },
+        {
+          "start": 955,
+          "end": 999,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "printBool",
+      "nodes": [
+        {
+          "start": 43,
+          "end": 112,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "allBool",
+      "nodes": [
+        {
+          "start": 63,
+          "end": 221,
+          "isCollapsed": false
+        },
+        {
+          "start": 101,
+          "end": 212,
+          "isCollapsed": false
+        },
+        {
+          "start": 175,
+          "end": 202,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "anyBool",
+      "nodes": [
+        {
+          "start": 63,
+          "end": 638,
+          "isCollapsed": false
+        },
+        {
+          "start": 101,
+          "end": 629,
+          "isCollapsed": false
+        },
+        {
+          "start": 140,
+          "end": 356,
+          "isCollapsed": false
+        },
+        {
+          "start": 252,
+          "end": 344,
+          "isCollapsed": false
+        },
+        {
+          "start": 361,
+          "end": 619,
+          "isCollapsed": false
+        },
+        {
+          "start": 403,
+          "end": 619,
+          "isCollapsed": false
+        },
+        {
+          "start": 501,
+          "end": 607,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "bool2num",
+      "nodes": [
+        {
+          "start": 112,
+          "end": 336,
+          "isCollapsed": false
+        },
+        {
+          "start": 150,
+          "end": 327,
+          "isCollapsed": false
+        },
+        {
+          "start": 218,
+          "end": 286,
+          "isCollapsed": false
+        },
+        {
+          "start": 291,
+          "end": 317,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "uniqueNum",
+      "nodes": [
+        {
+          "start": 84,
+          "end": 262,
+          "isCollapsed": false
+        },
+        {
+          "start": 120,
+          "end": 172,
+          "isCollapsed": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<controller>
+  <String name="VAL 3" value="Demo" />
+  <Bool name="buildSerial" value="false" />
+  <String name="UserApp" value="usrapp" />
+  <String name="templateDir" value="templates" />
+  <uniVALparams>
+    <String name="fieldbus" value="" />
+  </uniVALparams>
+  <String name="simulMode" value="simulation" />
+  <PCC>
+    <String name="Name" value="" />
+    <String name="System" value="" />
+    <String name="Config" value="" />
+  </PCC>
+  <String name="starcFirmware" value="" />
+  <Bool name="legacyEditor" value="false" />
+  <String name="serialNumber" value="" />
+  <Int name="traceSignals" value="-1" />
+  <Bool name="logging" value="true" />
+  <Bool name="cpuExtPowerSupply" value="false" />
+  <Float name="lliCycleTime" value="-1" />
+  <Float name="powerHourCount" value="45384.691173" />
+</controller>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<network>
+  <String name="hostname" value="" />
+  <Bool name="dhcpClient" value="false" />
+  <Int name="dhcpClientType" value="-1" />
+  <String name="dhcpClientAddress" value="" />
+  <Inet name="ipAddress" value="192.168.56.1" />
+  <Inet name="ipMask" value="255.255.255.0" />
+  <Inet name="ipAddress2" value="192.168.56.1" />
+  <Inet name="ipMask2" value="255.255.255.0" />
+  <Uint name="fieldbusConsolePort" value="0" />
+  <Bool name="unsecureFTP" value="true" />
+  <soapServer>
+    <String name="host" value="" />
+    <Bool name="enable" value="true" />
+    <Uint name="port" value="851" />
+    <Int name="sendTimeout" value="60" />
+    <Int name="receiveTimeout" value="1" />
+    <Int name="acceptTimeout" value="0" />
+    <Uint name="maxKeepAlive" value="2147483647" />
+    <Float name="sessionTimeout" value="3600" />
+    <Int name="backLog" value="100" />
+  </soapServer>
+  <restServer>
+    <String name="host" value="" />
+    <Uint name="port" value="852" />
+  </restServer>
+  <sntpClient>
+    <Bool name="enable" value="false" />
+    <Inet name="serverIp" value="0.0.0.0" />
+    <String name="timezone" value="UTC" />
+  </sntpClient>
+  <opcUaServer>
+    <String name="publicKey" value="" />
+    <String name="privateKey" value="" />
+    <String name="password" value="" />
+    <Uint name="portOpc" value="4880" />
+    <Bool name="compatibilityV1" value="false" />
+  </opcUaServer>
+  <userpage>
+    <Bool name="unencryptedAccess" value="false" />
+    <Uint name="unencryptedPort" value="10101" />
+  </userpage>
+  <vnc>
+    <Bool name="enable" value="true" />
+    <Uint name="port" value="5900" />
+  </vnc>
+</network>

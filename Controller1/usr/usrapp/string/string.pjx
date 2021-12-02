@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s8.13.1Cs9_BS2800" stackSize="5000" millimeterUnit="true" />
+  <Programs>
+    <Program file="splitString.pgx" />
+    <Program file="start.pgx" />
+    <Program file="stop.pgx" />
+  </Programs>
+  <Database>
+    <Data file="string.dtx" />
+  </Database>
+  <Libraries>
+    <Library alias="utils" path="Disk://helpers/helpers.pjx" />
+  </Libraries>
+  <Types>
+    <Type name="lists" path="Disk://types/lists/lists.pjx" />
+  </Types>
+</Project>

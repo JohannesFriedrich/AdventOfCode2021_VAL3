@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Code><![CDATA[begin
+  
+  ? "## test num2Bool"
+  ? "nTest[0] = nTest[1] = nTest[4] = 1"
+  nTest[0] = nTest[1] = nTest[4] = 1
+  
+  call num2bool(nTest, bResult, bError)
+  call printBool(bResult)
+  
+  ? "## test countBool"
+  call countBool(bResult,nResult)
+  call printNum(nResult)
+  
+  ? "## test allBool"
+  call allBool(bResult, bResult2)
+  call printBool(bResult2)
+  
+  ? "## test allBool"
+  ? "nTest[2] = nTest[3] = 1"
+  nTest[2] = nTest[3] = 1
+  call num2bool(nTest, bResult, bError)
+  call allBool(bResult, bResult2)
+  call printBool(bResult2)
+  
+  ? "## test countBool"
+  call countBool(bResult,nResult)
+  call printNum(nResult)
+  
+  ? "## test anyBool TRUE"
+  call anyBool(bResult, "TRUE",bResult2)
+  call printBool(bResult2)
+  
+  ? "## test anyBool FALSE"
+  call anyBool(bResult, "FALSE",bResult2)
+  call printBool(bResult2)
+  
+  ? "## test bool2num"
+  call bool2num(bResult, nResult, bError)
+  call printNum(nResult)
+  
+  ? "## test bool2num"
+  ? "nTest[0] = nTest[1] = nTest[4] = 0"
+  nTest[0] = nTest[1] = nTest[4] = 0
+  call num2bool(nTest, bResult, bError)
+  call bool2num(bResult, nResult, bError)
+  call printNum(nResult)
+end]]></Code>
+  </Program>
+</Programs>

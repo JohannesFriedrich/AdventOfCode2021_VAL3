@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="splitString" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sInput" type="string" xsi:type="array" use="reference" />
+      <Parameter name="x_sPattern" type="string" xsi:type="element" />
+      <Parameter name="x_lResult" type="lists" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nLength" type="num" xsi:type="array" size="1" />
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_sLine" type="string" xsi:type="array" size="1" />
+      <Local name="l_nCount" type="num" xsi:type="array" size="1" />
+      <Local name="l_nPos" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_nLength = size(x_sInput)
+  resize(x_lResult,1,l_nLength)
+  
+  l_nElement=0
+  
+  // iterate complete input x_sInput[0] ... x_sInput[l_nLength-1]
+  for l_nElement = 0 to l_nLength-1
+  
+    // copy element
+    l_sLine = x_sInput[l_nElement]
+    
+    // search x_sPattern
+    l_nCount = 0
+    while len(l_sLine)!=0
+      l_nPos=find(l_sLine, x_sPattern)
+    
+      if l_nPos==-1
+        l_nPos=len(l_sLine)
+      endIf
+      
+      if l_nCount != 0
+        append(x_lResult[l_nElement].sString)
+      endIf
+        
+      x_lResult[l_nElement].sString[l_nCount] = left(l_sLine,l_nPos)
+      l_sLine = right(l_sLine,max(0,len(l_sLine)-l_nPos-len(x_sPattern)))
+      l_nCount = l_nCount+1
+     
+    endWhile
+  endFor
+  
+end]]></Code>
+  </Program>
+</Programs>

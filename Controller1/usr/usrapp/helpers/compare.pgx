@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="compare" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nInput" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_sSign" type="string" xsi:type="element" />
+      <Parameter name="x_nCompareTo" type="num" xsi:type="element" />
+      <Parameter name="x_bResult" type="bool" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nLength" type="num" xsi:type="array" size="1" />
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_nLength = size(x_nInput)
+  x_bResult[0] = false
+  resize(x_bResult,1,l_nLength)
+  
+  switch x_sSign
+    case ">"
+      for l_nElement = 0 to l_nLength-1
+        if x_nInput[l_nElement] > x_nCompareTo
+          x_bResult[l_nElement] = true
+        else
+          x_bResult[l_nElement] = false
+        endIf
+      endFor
+    break
+    case ">="
+      for l_nElement = 0 to l_nLength-1
+        if x_nInput[l_nElement] >= x_nCompareTo
+          x_bResult[l_nElement] = true
+        else
+          x_bResult[l_nElement] = false
+        endIf
+      endFor
+    break
+    case "<"
+      for l_nElement = 0 to l_nLength-1
+        if x_nInput[l_nElement] < x_nCompareTo
+          x_bResult[l_nElement] = true
+        else
+          x_bResult[l_nElement] = false
+        endIf
+      endFor
+    break
+        case "<="
+      for l_nElement = 0 to l_nLength-1
+        if x_nInput[l_nElement] <= x_nCompareTo
+          x_bResult[l_nElement] = true
+        else
+          x_bResult[l_nElement] = false
+        endIf
+      endFor
+    break
+  endSwitch
+end]]></Code>
+  </Program>
+</Programs>

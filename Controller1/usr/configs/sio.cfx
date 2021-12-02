@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<sio>
+  <serialPort>
+    <String name="name" value="portSerial" />
+    <Uint name="baudRate" value="9600" />
+    <Uint name="byteSize" value="8" />
+    <String name="parity" value="none" />
+    <Uint name="nbStopBit" value="1" />
+    <Int name="endOfString" value="13" />
+    <Float name="timeOut" value="5" />
+    <String name="flowControl" value="none" />
+  </serialPort>
+</sio>

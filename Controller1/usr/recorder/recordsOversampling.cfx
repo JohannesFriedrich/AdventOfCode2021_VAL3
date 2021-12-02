@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RecorderList>
+  <Recorder name="oversampling" >
+    <Record name="record" index="0" description="Oversampling" >
+      <String name="path" value="recordH" />			<!-- path to the record file -->
+      <Float name="duration" value="1" />			<!-- record max. duration in s -->
+      <Float name="frequency" value="50" />                     <!-- record frequency in % of max. frequency -->
+      <StringList name="variables" >
+        <String index="0" value="fastins" />
+        <String index="1" value="jntFbkPos" />
+      </StringList>
+    </Record>
+  </Recorder>
+</RecorderList>

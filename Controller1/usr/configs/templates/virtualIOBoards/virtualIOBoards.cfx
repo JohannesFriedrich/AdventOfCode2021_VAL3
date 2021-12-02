@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VirtualIOBoards>
+
+  <!-- Board name -->
+  <Board name="FirstBoard">
+
+    <!--
+           Note regarding physical names (links):
+      Each IO will have a link under the following form:
+        "VirtualIOBoards\{BOARD_NAME}\%{TYPE}{CHANNEL}"
+      where:
+        * BOARD_NAME is the name of the board
+        * TYPE is:
+          - for digital IOs: "I" for inputs and "Q" for outputs
+          - for analog IOs: "I"/"Q" for inputs/outputs + a second letter for the size/format:
+            _ F if format is float
+            _ B for BYTE (8 bits)
+            _ W for WORD (16 bits)
+            _ DW for DOUBLEWORD (32 bits but not float)
+        * CHANNEL is the IO channel
+    -->
+
+    <!-- Digital inputs (can be read in VAL3) -->
+    <DInputs>
+      <!-- description: Description displayed in pendant (can be left empty) -->
+      <!-- channel: Channel number. You must increment it by one on each DIO -->
+      <!-- mode: Accepted values are "notInverted" and "inverted" -->
+      <Dio description="First digital input" channel="0" mode="notInverted" />
+      <Dio description="You can leave this field empty" channel="1" mode="notInverted" />
+
+      <!-- Note: The physical name of the following IO will be: "VirtualIOBoards\FirstBoard\%I2" -->
+      <Dio description="" channel="2" mode="notInverted" />
+      <Dio description="" channel="3" mode="notInverted" />
+      <Dio description="" channel="4" mode="notInverted" />
+      <Dio description="" channel="5" mode="notInverted" />
+      <Dio description="" channel="6" mode="notInverted" />
+      <Dio description="Last digital input" channel="7" mode="notInverted" />
+    </DInputs>
+
+    <!-- Digital outputs (can be read and written in VAL3) -->
+    <DOutputs>
+      <!-- Note: The physical name of the first output will be: "VirtualIOBoards\FirstBoard\%Q0" -->
+      <Dio description="A" channel="0" mode="notInverted" />
+      <Dio description="B" channel="1" mode="notInverted" />
+      <Dio description="C" channel="2" mode="notInverted" />
+      <Dio description="D" channel="3" mode="notInverted" />
+      <Dio description="E" channel="4" mode="notInverted" />
+      <Dio description="F" channel="5" mode="notInverted" />
+      <Dio description="G" channel="6" mode="notInverted" />
+      <Dio description="H" channel="7" mode="notInverted" />
+    </DOutputs>
+
+    <!-- Analog inputs (can be read in VAL3) -->
+    <AInputs>
+      <!-- channel: Channel number. Should start from max digital input channel -->
+      <!-- bitCount: Number of bits reserved for this AIO. Range is [2-32] -->
+      <!-- format:  Accepted values are "float" (needs bitCount=32), "signed" and "unsigned" -->
+
+      <!-- Note: The physical name of the first analog input will be: "VirtualIOBoards\FirstBoard\%IF8" -->
+      <Aio description="FLOAT INPUT" channel="8" bitCount="32" format="float" />
+
+      <!-- On analog IO, channel must be incremented of the bitCount (32+8=40) -->
+      <!-- Note: The physical name of the second analog input will be: "VirtualIOBoards\FirstBoard\%IW40" -->
+      <Aio description="SIGNED WORD INPUT" channel="40" bitCount="16" format="signed" />
+
+      <!-- Note: The physical name of the following IO will be: "VirtualIOBoards\FirstBoard\%IB56" -->
+      <Aio description="UNSIGNED BYTE INPUT" channel="56" bitCount="8" format="unsigned" />
+    </AInputs>
+
+    <!-- Analog outputs (can be read and written in VAL3) -->
+    <AOutputs>
+      <!-- channel: Channel number. Should start from max digital output channel -->
+      <!-- bitCount & format: Same as inputs -->
+
+      <!-- Note: The physical name of the analog output will be: "VirtualIOBoards\FirstBoard\%QF8" -->
+      <Aio description="FLOAT OUTPUT" channel="8" bitCount="32" format="float" />
+    </AOutputs>
+
+  </Board>
+
+  <!-- You can have multiple boards but their names must be different -->
+  <Board name="SecondBoard">
+    <!-- channel numbers restart from 0 on each board -->
+    <DInputs>
+      <!-- Note: The physical name of the following IO will be: "VirtualIOBoards\SecondBoard\%I0" -->
+      <Dio description="" channel="0" mode="notInverted" />
+      <Dio description="" channel="1" mode="notInverted" />
+    </DInputs>
+  </Board>
+
+</VirtualIOBoards>

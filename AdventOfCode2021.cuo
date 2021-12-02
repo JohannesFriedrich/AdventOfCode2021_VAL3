@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CellUserOptions>
+  <Controller Name="Controller1">
+    <Application>Disk://Day1/Day1.pjx</Application>
+    <Application>Disk://math/math.pjx</Application>
+    <Application>Disk://helpers/helpers.pjx</Application>
+  </Controller>
+  <Option Name="DataTreeView">
+    <Nodes>
+      <Node Path="AdventOfCode2021" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##Day1#Day1.pjx" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx\bool" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##math#math.pjx" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##math#math.pjx\num" IsExpanded="true" />
+    </Nodes>
+  </Option>
+  <Option Name="CellExplorer">
+    <Nodes>
+      <Node Path="AdventOfCode2021" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##Day1#Day1.pjx" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##Day1#Day1.pjx\interface" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx\printNum" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx\uniqueNum" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx\vec2num" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##math#math.pjx" IsExpanded="true" />
+    </Nodes>
+  </Option>
+  <Option Name="GeometryView">
+    <Nodes>
+      <Node Path="AdventOfCode2021" IsExpanded="true" />
+    </Nodes>
+  </Option>
+  <Option Name="Breakpoints">
+    <Breakpoints />
+  </Option>
+  <Option Name="IOsControlPanel">
+    <Ios />
+  </Option>
+  <Option Name="Watches">
+    <Watches>
+      <Watch Controller="Controller1" Application="Disk://Day1/Day1.pjx">bResult</Watch>
+      <Watch Controller="Controller1" Application="Disk://Day1/Day1.pjx">nResult2</Watch>
+      <Watch Controller="Controller1" Application="Disk://math/math.pjx">nResultTest</Watch>
+      <Watch Controller="Controller1" Application="Disk://math/math.pjx">nIndex</Watch>
+    </Watches>
+  </Option>
+  <Option Name="ExpressionWatches">
+    <ExpressionWatches />
+  </Option>
+  <Option Name="3DView">
+    <_3DView Visible="false" />
+  </Option>
+  <Option Name="SynchronizerMode">
+    <Synchronizers>
+      <Synchronizer Controller="Controller1" Mode="Emulator" />
+    </Synchronizers>
+  </Option>
+  <Option Name="Safety">
+    <Safeties>
+      <Safety Controller="Controller1" Visible="false" />
+    </Safeties>
+  </Option>
+</CellUserOptions>

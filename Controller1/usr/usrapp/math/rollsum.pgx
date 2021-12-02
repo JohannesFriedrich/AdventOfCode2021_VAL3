@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="rollsum" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nInput" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nWindow" type="num" xsi:type="element" />
+      <Parameter name="x_nResult" type="num" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nLength" type="num" xsi:type="array" size="1" />
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nSum" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_nLength = size(x_nInput)
+  x_nResult = 0
+  resize(x_nResult,1,l_nLength-x_nWindow+1)
+  
+  l_nElement = 0
+  while l_nElement <l_nLength-x_nWindow+1
+    call utils:range(l_nElement, l_nElement+x_nWindow, 1,nIndex)
+    call utils:extractNum(x_nInput,nIndex,nResult)
+    call sum(nResult, l_nSum)
+    
+    x_nResult[l_nElement] = l_nSum
+    l_nElement = l_nElement + 1
+  endWhile
+  
+end]]></Code>
+  </Program>
+</Programs>

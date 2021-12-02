@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="readFile" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sFilename" type="string" xsi:type="element" />
+      <Parameter name="x_sLine" type="string" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nFileHandler" type="num" xsi:type="array" size="1" />
+      <Local name="l_nReadLines" type="num" xsi:type="array" size="1" />
+      <Local name="l_nDataSize" type="num" xsi:type="array" size="1" />
+      <Local name="l_sLine" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // Open file to write
+  l_nFileHandler = $fileOpen(x_sFilename, "r")
+  // init Buffer sLine
+  resize(x_sLine, 1, 1)
+  x_sLine = ""
+  l_nDataSize = 0
+  // read line by line
+  do
+    l_nReadLines = $fileGet(l_nFileHandler,l_sLine,1)
+    if l_nReadLines > 0
+      append(x_sLine)
+      x_sLine[l_nDataSize] = l_sLine
+    endIf
+    l_nDataSize = l_nDataSize + 1
+  until l_nReadLines == 0
+  
+  // remove last entry in x_sLine, because of "append" command before
+  resize(x_sLine, 1, size(x_sLine)-1)
+  // close file
+  $fileClose(l_nFileHandler)
+
+end]]></Code>
+  </Program>
+</Programs>

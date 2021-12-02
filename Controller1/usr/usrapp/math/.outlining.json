@@ -1,0 +1,68 @@
+﻿{
+  "programs": [
+    {
+      "mode": 3,
+      "name": "cumsum",
+      "nodes": [
+        {
+          "start": 94,
+          "end": 293,
+          "isCollapsed": false
+        },
+        {
+          "start": 132,
+          "end": 279,
+          "isCollapsed": false
+        },
+        {
+          "start": 188,
+          "end": 269,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "diff",
+      "nodes": [
+        {
+          "start": 96,
+          "end": 219,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "rollsum",
+      "nodes": [
+        {
+          "start": 120,
+          "end": 388,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "stop",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "sum",
+      "nodes": [
+        {
+          "start": 59,
+          "end": 150,
+          "isCollapsed": false
+        }
+      ]
+    }
+  ]
+}

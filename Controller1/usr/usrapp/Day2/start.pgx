@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nListElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nPos" type="num" xsi:type="array" size="1" />
+      <Local name="l_nForward" type="num" xsi:type="array" size="1" />
+      <Local name="l_nUp" type="num" xsi:type="array" size="1" />
+      <Local name="l_nDown" type="num" xsi:type="array" size="1" />
+      <Local name="l_nAim" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // read file
+  call util:readFile("Disk://input_day2.txt", sInput)
+  //   // sInput[0] = "forward 9" sInput[1] = "down 3" ....
+  
+  call str:splitString(sInput, " ", lResult)
+  // lResult[0].sString[0] = "forward"
+  // lResult[0].sString[1] = "9"
+  
+  // PUZZLE 1 
+  
+  // extract numbers from lResult
+  resize(sCommand,1,size(lResult))
+  resize(sValue,1,size(lResult))
+  
+  for l_nListElement = 0 to size(lResult)-1
+    sCommand[l_nListElement] = lResult[l_nListElement].sString[0]    
+    sValue[l_nListElement] = lResult[l_nListElement].sString[1]  
+  endFor
+  
+  // sValue-> nValue vec2num
+  call util:vec2num(sValue, nValue)
+  
+  // find commands in sCommand and save to arrays
+  for l_nListElement = 0 to size(lResult)-1
+    l_nPos = find(sCommand[l_nListElement], "forward") 
+    if l_nPos != -1
+      //Command was found!
+      l_nForward = l_nForward + nValue[l_nListElement]
+    endIf
+    
+    l_nPos = find(sCommand[l_nListElement], "up") 
+    if l_nPos != -1
+      //Command was found!
+      l_nUp = l_nUp + nValue[l_nListElement]
+    endIf
+    
+    l_nPos = find(sCommand[l_nListElement], "down") 
+    if l_nPos != -1
+      //Command was found!
+      l_nDown = l_nDown + nValue[l_nListElement]
+    endIf
+    
+  endFor
+  
+  ? l_nForward * (l_nDown-l_nUp)
+  // 1451208
+  
+  // PUZZLE 2
+  
+  l_nForward = 0
+  l_nDown = 0
+  l_nAim = 0
+  
+  // find commands in sCommand and save to arrays
+  for l_nListElement = 0 to size(lResult)-1
+    l_nPos = find(sCommand[l_nListElement], "forward") 
+    if l_nPos != -1
+      //Command was found!
+      l_nForward = l_nForward + nValue[l_nListElement]
+      l_nDown = l_nDown + l_nAim*nValue[l_nListElement]
+    endIf
+    
+    l_nPos = find(sCommand[l_nListElement], "up") 
+    if l_nPos != -1
+      //Command was found!
+      l_nAim = l_nAim - nValue[l_nListElement]
+    endIf
+    
+    l_nPos = find(sCommand[l_nListElement], "down") 
+    if l_nPos != -1
+      //Command was found!
+      l_nAim = l_nAim + nValue[l_nListElement]
+    endIf
+    
+  endFor
+
+  ? l_nForward * l_nDown
+  //1620141160
+  
+end]]></Code>
+  </Program>
+</Programs>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cell>
+  <String name="language" value="english" />
+  <Uint64 name="magicFlag" value="0" />
+  <Float name="cycleTime" value="-1" />
+  <Float name="val3WatchdogPeriod" value="-1" />
+  <String name="jntRefSelection" value="" />
+  <Float name="maxCartSlowSpeed" value="250" />
+  <Float name="maxStartMonitorSpeed" value="10" />
+  <FloatArray name="minCellJointPos" >
+    <Float index="0" value="-99999" />
+    <Float index="1" value="-99999" />
+    <Float index="2" value="-99999" />
+    <Float index="3" value="-99999" />
+    <Float index="4" value="-99999" />
+    <Float index="5" value="-99999" />
+  </FloatArray>
+  <FloatArray name="maxCellJointPos" >
+    <Float index="0" value="99999" />
+    <Float index="1" value="99999" />
+    <Float index="2" value="99999" />
+    <Float index="3" value="99999" />
+    <Float index="4" value="99999" />
+    <Float index="5" value="99999" />
+  </FloatArray>
+  <CellJntRange>
+  </CellJntRange>
+  <CellJntRef>
+  </CellJntRef>
+  <String name="robotName" value="" />
+  <autoStart name="" location="" />
+  <String name="initWorkingMode" value="manual" />
+  <CellDynamicParams>
+    <VectCart name="gravity" x="0" y="0" z="-9.81" />
+  </CellDynamicParams>
+  <UserIORefresh>
+    <String name="mode" value="default" />
+    <Float name="cyclicRatio" value="-1" />
+  </UserIORefresh>
+  <Bool name="useUsUnits" value="false" />
+  <String name="T1_key" value="" />
+  <String name="T2_key" value="" />
+  <String name="T3_key" value="" />
+  <String name="defaultUser" value="default" />
+  <Float name="monitorSpeed" value="10" />
+</cell>

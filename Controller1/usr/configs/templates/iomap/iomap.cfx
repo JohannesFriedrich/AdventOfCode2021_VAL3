@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<IoMap>
+    <!--  To activate an IO mapping, fill the value with the physical I/O link  -->
+    <!--  then reboot. Correct / incorrect mappings are listed in the event logger.  -->
+    <!--  The physical link can be copied/pasted from the physical IO tool of SRS   -->
+
+    <!--  CONFIGURATION OF SYSTEM INPUTS  -->
+    <String name="enablePower" type="din" description="a rising edge on this input will toggle the state of the arm power (only in remote working mode) - digital input" value="" />
+    <String name="remoteMonitorSpeed" type="ain" description="replace the -/+ buttons of the MCP (only when MCP is replaced with a dummy plug) - analog input ]0,+100]" value="" />
+    <String name="remoteMoveHold" type="din" description="replace the Move/Hold button of the MCP (only when MCP is replaced with a dummy plug) - digital input" value="" />
+    <String name="safetyRestart" type="din" description="a rising edge on this input will restart the safety - digital input" value="" />
+    <String name="fastMode" type="din" description="a rising edge on this input will toggle the state of the fast mode (fast speed in test working mode) - digital input" value="" />
+    <String name="referencingSensor" type="din" description="signal from the referencing sensor (only with 'safeCell' and/or 'safety' option, requires the safety parameter referencing_USID1 to be OFF) - digital input" value="" />
+
+    <!--  CONFIGURATION OF SYSTEM OUTPUTS  -->
+    <String name="power" type="dout" description="status of arm power - digital output" value="" />
+    <String name="fastSpeed" type="dout" description="status of the fast speed mode in test working mode - digital output" value="" />
+    <String name="dummyPlug" type="dout" description="presence of the dummy plug in replacement of the MCP - digital output" value="" />
+    <String name="monitorSpeed" type="aout" description="value of current monitor speed - analog output ]0,+1]" value="" />
+    <String name="workingMode" type="aout" description="current working mode - analog output {0 (invalid), 1 (manual) , 2 (test), 3 (local), 4 (remote)}" value="" />
+    <String name="jogMode" type="aout" description="current jog mode - analog output {0 (disabled), 1 (joint) , 2 (frame), 3 (tool), 4 (move), 5 (connect)}" value="" />
+    <String name="deadman" type="dout" description="status of the deadman/enabling device - digital output {0 (released), 1 (pressed)}" value="" />
+    <String name="moveHold" type="dout" description="status of the motion - digital output {0 (hold), 1 (moving)}" value="" />
+    <String name="waitingRestart" type="dout" description="status of safety restart - digital output {0 (restart not needed), 1 (waiting restart)}" value="" />
+
+    <!-- REMOTE MCP OPTION  -->
+    <String name="remoteEnablePower" type="din" description="replace the Power button of the MCP (only with 'remoteMcp' option) - digital input" value="" />
+    <String name="remoteTestMode" type="din" description="switch to Test working mode (only with 'remoteMcp' option) - digital input" value="" />
+    <String name="remoteManualMode" type="din" description="switch to Manual working mode (only with 'remoteMcp' option) - digital input" value="" />
+    <String name="remoteLocalMode" type="din" description="switch to Local working mode (only with 'remoteMcp' option) - digital input" value="" />
+    <String name="remoteRemoteMode" type="din" description="switch to Remote working mode (only with 'remoteMcp' option) - digital input" value="" />
+    <String name="remoteJogJointMode" type="din" description="switch to Joint jog mode (only with 'remoteMcp' option) - digital input" value="" />
+    <String name="remoteJogFrameMode" type="din" description="switch to Frame jog mode (only with 'remoteMcp' option) - digital input" value="" />
+    <String name="remoteJogToolMode" type="din" description="switch to Tool jog mode (only with 'remoteMcp' option) - digital input" value="" />
+    <String name="remoteJogUserMode" type="din" description="switch to Point jog mode (only with 'remoteMcp' option) - digital input" value="" />
+    <String name="remoteJogMove1" type="ain" description="replace the J1/X -/+ buttons of the MCP (only with 'remoteMcp' option) - analog input [-100,+100]" value="" />
+    <String name="remoteJogMove2" type="ain" description="replace the J2/Y -/+ buttons of the MCP (only with 'remoteMcp' option) - analog input [-100,+100]" value="" />
+    <String name="remoteJogMove3" type="ain" description="replace the J3/Z -/+ buttons of the MCP (only with 'remoteMcp' option) - analog input [-100,+100]" value="" />
+    <String name="remoteJogMove4" type="ain" description="replace the J4/RX -/+ buttons of the MCP (only with 'remoteMcp' option) - analog input [-100,+100]" value="" />
+    <String name="remoteJogMove5" type="ain" description="replace the J5/RY -/+ buttons of the MCP (only with 'remoteMcp' option) - analog input [-100,+100]" value="" />
+    <String name="remoteJogMove6" type="ain" description="replace the J6/RZ -/+ buttons of the MCP (only with 'remoteMcp' option) - analog input [-100,+100]" value="" />
+    <String name="remoteSpeedLimit" type="din" description="a rising edge on this input will increase the max. Cartesian speed in fast test mode (only with 'remoteMcp' option) - digital input" value="" />
+	
+	<!-- BRAKE RELEASE -->
+    <String name="brake1Select" type="din" description="Bit mask to select brake 1 to release - digital input" value="" />
+    <String name="brake2Select" type="din" description="Bit mask to select brake 2 to release - digital input" value="" />
+    <String name="brake3Select" type="din" description="Bit mask to select brake 3 to release - digital input" value="" />
+    <String name="brake4Select" type="din" description="Bit mask to select brake 4 to release - digital input" value="" />
+	<String name="brake5Select" type="din" description="Bit mask to select brake 5 to release - digital input" value="" />
+	<String name="brake6Select" type="din" description="Bit mask to select brake 6 to release - digital input" value="" />
+	<String name="releaseBrake" type="din" description="release the selected brakes - digital intput" value="" />
+    
+    <String name="brake1SelectStatus" type="dout" description="status of bit mask to select brake 1 to release - digital output" value="" />
+    <String name="brake2SelectStatus" type="dout" description="status of bit mask to select brake 2 to release - digital output" value="" />
+    <String name="brake3SelectStatus" type="dout" description="status of bit mask to select brake 3 to release - digital output" value="" />
+    <String name="brake4SelectStatus" type="dout" description="status of bit mask to select brake 4 to release - digital output" value="" />
+    <String name="brake5SelectStatus" type="dout" description="status of bit mask to select brake 5 to release - digital output" value="" />
+    <String name="brake6SelectStatus" type="dout" description="status of bit mask to select brake 6 to release - digital output" value="" />
+    <String name="releaseBrakeStatus" type="dout" description="status of brake release - digital output" value="" />
+    <String name="elecBrakingStatus" type="dout" description="status of the electrical braking - digital output" value="" />
+</IoMap>
+
