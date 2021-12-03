@@ -1,0 +1,111 @@
+﻿{
+  "programs": [
+    {
+      "mode": 3,
+      "name": "countBits",
+      "nodes": [
+        {
+          "start": 82,
+          "end": 288,
+          "isCollapsed": false
+        },
+        {
+          "start": 108,
+          "end": 279,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": [
+        {
+          "start": 335,
+          "end": 542,
+          "isCollapsed": false
+        },
+        {
+          "start": 781,
+          "end": 1672,
+          "isCollapsed": false
+        },
+        {
+          "start": 852,
+          "end": 1018,
+          "isCollapsed": false
+        },
+        {
+          "start": 918,
+          "end": 982,
+          "isCollapsed": false
+        },
+        {
+          "start": 987,
+          "end": 1008,
+          "isCollapsed": false
+        },
+        {
+          "start": 1174,
+          "end": 1417,
+          "isCollapsed": false
+        },
+        {
+          "start": 1212,
+          "end": 1406,
+          "isCollapsed": false
+        },
+        {
+          "start": 1483,
+          "end": 1594,
+          "isCollapsed": false
+        },
+        {
+          "start": 1678,
+          "end": 1784,
+          "isCollapsed": false
+        },
+        {
+          "start": 1970,
+          "end": 2861,
+          "isCollapsed": false
+        },
+        {
+          "start": 2041,
+          "end": 2207,
+          "isCollapsed": false
+        },
+        {
+          "start": 2107,
+          "end": 2171,
+          "isCollapsed": false
+        },
+        {
+          "start": 2176,
+          "end": 2197,
+          "isCollapsed": false
+        },
+        {
+          "start": 2363,
+          "end": 2606,
+          "isCollapsed": false
+        },
+        {
+          "start": 2401,
+          "end": 2595,
+          "isCollapsed": false
+        },
+        {
+          "start": 2672,
+          "end": 2783,
+          "isCollapsed": false
+        },
+        {
+          "start": 2867,
+          "end": 2970,
+          "isCollapsed": false
+        }
+      ]
+    }
+  ]
+}

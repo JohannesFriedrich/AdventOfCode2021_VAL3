@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
   <Program name="start">
+    <Locals>
+      <Local name="l_nBin" type="num" xsi:type="array" size="3" />
+      <Local name="l_nRes" type="num" xsi:type="array" size="1" />
+    </Locals>
     <Code><![CDATA[begin
   
   ? "## test num2Bool"
@@ -47,6 +51,16 @@
   call num2bool(nTest, bResult, bError)
   call bool2num(bResult, nResult, bError)
   call printNum(nResult)
-end]]></Code>
+  
+  ? "## test bin2dec"
+  ? "nTest"
+  l_nBin[0] = 1
+  l_nBin[1] = 0
+  l_nBin[2] = 0
+  
+  call bin2dec(l_nBin, l_nRes)
+  call printNum(l_nRes)
+  
+end ]]></Code>
   </Program>
 </Programs>

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nNum" type="num" xsi:type="array" size="1" />
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nCounter" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRow" type="num" xsi:type="array" size="1" />
+      <Local name="l_nSizeList" type="num" xsi:type="array" size="1" />
+      <Local name="l_nDeleteIndex" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRESULT" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // read file
+  call util:readFile("Disk://input_day3.txt", sInput)
+  // sInput[0] = "000011010001" 
+  // sInput[1] = ""
+  
+  call str:splitWord(sInput, lResult)
+  // lResult[0].sString[0] = "0"
+  // lResult[0].sString[1] = "0"
+  // lResult[4].sString[1] = "1"
+  
+  // PUZZLE 1 
+  
+  call countBits(lResult, nSumPerCol)
+  
+  for l_nElement = 0 to size(nSumPerCol)-1
+    nBitGamma[l_nElement] = sel(nSumPerCol[l_nElement] > size(lResult)/2,1,0)
+    nBitEpsilon[l_nElement] = sel(nSumPerCol[l_nElement] > size(lResult)/2,0,1)
+  endFor
+  
+  call util:bin2dec(nBitEpsilon, nEpsilon)
+  call util:bin2dec(nBitGamma, nGamma)
+  
+  nResult =  nEpsilon*nGamma
+  
+  call util:printNum(nResult)
+  // 1131506
+  
+  // Puzzle 2
+  
+  // 
+  l_nCounter = 0
+  l_nSizeList = size(lResult)
+  while l_nSizeList > 1
+    
+    call countBits(lResult, nSumPerCol)
+    if nSumPerCol[l_nCounter] == size(lResult)/2
+      l_nNum = 1
+    elseIf nSumPerCol[l_nCounter] > size(lResult)/2
+      l_nNum = 1
+    else
+      l_nNum = 0
+    endIf
+    
+    // find all rows with l_nNum in cols
+    l_nDeleteIndex = 0
+    l_nSizeList = size(lResult)
+    resize(nDeleteIndex,1,1)
+    nDeleteIndex = 0
+    for l_nRow = 0 to l_nSizeList-1
+      if lResult[l_nRow].sString[l_nCounter]  != toString("",l_nNum)
+        append(nDeleteIndex)
+        l_nDeleteIndex = l_nDeleteIndex + 1
+        nDeleteIndex[l_nDeleteIndex] = l_nRow 
+      endIf
+    endFor
+    delete(nDeleteIndex[0])
+    
+    // delete unvalid rows:
+    for l_nElement = (size(nDeleteIndex)-1) to 0 step -1
+      delete(lResult[nDeleteIndex[l_nElement]])
+    endFor
+    
+    l_nSizeList = size(lResult)
+    l_nCounter = l_nCounter+1
+  endWhile
+  
+  for l_nElement = 0 to 11
+    nBitOxygen[l_nElement] = sel(lResult.sString[l_nElement] == "1",1,0)
+  endFor
+  
+  call util:bin2dec(nBitOxygen, nResult)
+  
+  call util:printNum(nResult)
+  
+  // Now calc CO2
+  call str:splitWord(sInput, lResult)
+  l_nCounter = 0
+  l_nSizeList = size(lResult)
+  while l_nSizeList > 1
+    
+    call countBits(lResult, nSumPerCol)
+    if nSumPerCol[l_nCounter] == size(lResult)/2
+      l_nNum = 0
+    elseIf nSumPerCol[l_nCounter] > size(lResult)/2
+      l_nNum = 0
+    else
+      l_nNum = 1
+    endIf
+    
+    // find all rows with l_nNum in cols
+    l_nDeleteIndex = 0
+    l_nSizeList = size(lResult)
+    resize(nDeleteIndex,1,1)
+    nDeleteIndex = 0
+    for l_nRow = 0 to l_nSizeList-1
+      if lResult[l_nRow].sString[l_nCounter]  != toString("",l_nNum)
+        append(nDeleteIndex)
+        l_nDeleteIndex = l_nDeleteIndex + 1
+        nDeleteIndex[l_nDeleteIndex] = l_nRow 
+      endIf
+    endFor
+    delete(nDeleteIndex[0])
+    
+    // delete unvalid rows:
+    for l_nElement = (size(nDeleteIndex)-1) to 0 step -1
+      delete(lResult[nDeleteIndex[l_nElement]])
+    endFor
+    
+    l_nSizeList = size(lResult)
+    l_nCounter = l_nCounter+1
+  endWhile
+  
+  for l_nElement = 0 to 11
+    nBitCO2[l_nElement] = sel(lResult.sString[l_nElement] == "1",1,0)
+  endFor
+  
+  call util:bin2dec(nBitCO2, nResult2)
+  
+  call util:printNum(nResult2)
+  
+  // FINALLY: calcualte result
+  
+  l_nRESULT = nResult * nResult2
+  
+  call util:printNum(l_nRESULT)
+  // 7863147
+end]]></Code>
+  </Program>
+</Programs>

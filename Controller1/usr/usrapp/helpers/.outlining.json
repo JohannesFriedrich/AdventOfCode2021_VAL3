@@ -305,11 +305,6 @@
     },
     {
       "mode": 3,
-      "name": "start",
-      "nodes": []
-    },
-    {
-      "mode": 3,
       "name": "uniqueNum",
       "nodes": [
         {
@@ -328,6 +323,22 @@
           "isCollapsed": false
         }
       ]
+    },
+    {
+      "mode": 3,
+      "name": "bin2dec",
+      "nodes": [
+        {
+          "start": 27,
+          "end": 161,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": []
     }
   ]
 }

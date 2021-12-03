@@ -4,6 +4,7 @@
   <Programs>
     <Program file="allBool.pgx" />
     <Program file="anyBool.pgx" />
+    <Program file="bin2dec.pgx" />
     <Program file="bool2num.pgx" />
     <Program file="compare.pgx" />
     <Program file="countBool.pgx" />
