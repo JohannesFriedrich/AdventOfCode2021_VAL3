@@ -15,7 +15,6 @@
   // read file
   call util:readFile("Disk://input_day3.txt", sInput)
   // sInput[0] = "000011010001" 
-  // sInput[1] = ""
   
   call str:splitWord(sInput, lResult)
   // lResult[0].sString[0] = "0"
@@ -56,22 +55,12 @@
     endIf
     
     // find all rows with l_nNum in cols
-    l_nDeleteIndex = 0
     l_nSizeList = size(lResult)
-    resize(nDeleteIndex,1,1)
-    nDeleteIndex = 0
-    for l_nRow = 0 to l_nSizeList-1
+
+    for l_nRow = (l_nSizeList-1) to 0 step -1
       if lResult[l_nRow].sString[l_nCounter]  != toString("",l_nNum)
-        append(nDeleteIndex)
-        l_nDeleteIndex = l_nDeleteIndex + 1
-        nDeleteIndex[l_nDeleteIndex] = l_nRow 
+        delete(lResult[l_nRow])
       endIf
-    endFor
-    delete(nDeleteIndex[0])
-    
-    // delete unvalid rows:
-    for l_nElement = (size(nDeleteIndex)-1) to 0 step -1
-      delete(lResult[nDeleteIndex[l_nElement]])
     endFor
     
     l_nSizeList = size(lResult)
@@ -101,23 +90,12 @@
       l_nNum = 1
     endIf
     
-    // find all rows with l_nNum in cols
-    l_nDeleteIndex = 0
     l_nSizeList = size(lResult)
-    resize(nDeleteIndex,1,1)
-    nDeleteIndex = 0
-    for l_nRow = 0 to l_nSizeList-1
+
+    for l_nRow = (l_nSizeList-1) to 0 step -1
       if lResult[l_nRow].sString[l_nCounter]  != toString("",l_nNum)
-        append(nDeleteIndex)
-        l_nDeleteIndex = l_nDeleteIndex + 1
-        nDeleteIndex[l_nDeleteIndex] = l_nRow 
+        delete(lResult[l_nRow])
       endIf
-    endFor
-    delete(nDeleteIndex[0])
-    
-    // delete unvalid rows:
-    for l_nElement = (size(nDeleteIndex)-1) to 0 step -1
-      delete(lResult[nDeleteIndex[l_nElement]])
     endFor
     
     l_nSizeList = size(lResult)

@@ -6,7 +6,7 @@
 				<UIElement xsi:type="SplitContainer" Orientation="Vertical" DockedSize="1169,876">
 					<UIElement xsi:type="Workspace">
 						<Content xsi:type="TabbedMdiHost">
-							<Content xsi:type="TabbedMdiContainer" DockedSize="1206,847" SelectedWindowUniqueId="5fccb6c9-b3a7-4f17-81e0-df6d4d68e8a2" />
+							<Content xsi:type="TabbedMdiContainer" SelectedWindowUniqueId="3912d363-af08-40c2-bd8c-a264bc64c123" />
 						</Content>
 					</UIElement>
 					<UIElement xsi:type="ToolWindowContainer" DockedSize="0,0">
