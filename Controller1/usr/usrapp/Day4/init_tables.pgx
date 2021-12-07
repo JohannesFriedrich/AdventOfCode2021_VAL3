@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="init_tables">
+    <Locals>
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nMatrixEntry" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRow" type="num" xsi:type="array" size="1" />
+      <Local name="l_nTable" type="num" xsi:type="array" size="1" />
+      <Local name="l_sLine" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_nTable = 0
+  for l_nElement = 1 to size(lResult)
+  
+    if l_nElement %6 != 0
+      l_sLine = lResult[l_nElement-1].sString
+      call str:splitString(l_sLine," " ,lLine)
+      call util:vec2num(lLine.sString,nResult)
+      for l_nMatrixEntry = 0 to 4
+        tTable[l_nTable].nMatrix[l_nRow, l_nMatrixEntry] = nResult[l_nMatrixEntry]
+        tTable_remove[l_nTable].nMatrix[l_nRow, l_nMatrixEntry] = nResult[l_nMatrixEntry]
+      endFor
+      l_nRow = l_nRow+1
+    else
+      l_nRow = 0
+      l_nTable = l_nTable + 1
+      append(tTable)
+      resize(tTable[l_nTable].nMatrix,1,5)
+      resize(tTable[l_nTable].nMatrix,2,5)
+      append(tTable_remove)
+      resize(tTable_remove[l_nTable].nMatrix,1,5)
+      resize(tTable_remove[l_nTable].nMatrix,2,5)
+      append(tTable_empty)
+      resize(tTable_empty[l_nTable].nMatrix,1,5)
+      resize(tTable_empty[l_nTable].nMatrix,2,5)
+    endIf
+  endFor
+  
+end]]></Code>
+  </Program>
+</Programs>

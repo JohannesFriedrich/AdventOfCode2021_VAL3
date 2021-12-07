@@ -4,6 +4,9 @@
     <Locals>
       <Local name="l_nBin" type="num" xsi:type="array" size="3" />
       <Local name="l_nRes" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRows" type="num" xsi:type="array" size="1" />
+      <Local name="l_nCols" type="num" xsi:type="array" size="1" />
+      <Local name="l_nCounter" type="num" xsi:type="array" size="1" />
     </Locals>
     <Code><![CDATA[begin
   
@@ -70,6 +73,24 @@
   call mergeVectors(nTest, nTest2, nResult)
   call printNum(nResult)
   
+  ? "## test colSum"
+  for l_nRows = 0 to size(nMatrix,1)-1
+    for l_nCols = 0 to size(nMatrix,2)-1
+      nMatrix[l_nRows,l_nCols] = l_nCounter
+      l_nCounter = l_nCounter +1
+    endFor
+  endFor
+  
+  // 0 1  2  3
+  // 4 5  6  7
+  // 8 9 10 11
+  
+  call colSum(nMatrix, nResult)
+  call printNum(nResult)
+  
+  ? "## test rowSum"
+  call rowSum(nMatrix, nResult)
+  call printNum(nResult)
   
 end  ]]></Code>
   </Program>

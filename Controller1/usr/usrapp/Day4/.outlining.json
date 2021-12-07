@@ -1,0 +1,169 @@
+﻿{
+  "programs": [
+    {
+      "mode": 3,
+      "name": "size_tables",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "findNumberInMatrix",
+      "nodes": [
+        {
+          "start": 115,
+          "end": 541,
+          "isCollapsed": false
+        },
+        {
+          "start": 154,
+          "end": 532,
+          "isCollapsed": false
+        },
+        {
+          "start": 202,
+          "end": 514,
+          "isCollapsed": false
+        },
+        {
+          "start": 270,
+          "end": 363,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "check_table",
+      "nodes": [
+        {
+          "start": 150,
+          "end": 295,
+          "isCollapsed": false
+        },
+        {
+          "start": 195,
+          "end": 286,
+          "isCollapsed": false
+        },
+        {
+          "start": 301,
+          "end": 452,
+          "isCollapsed": false
+        },
+        {
+          "start": 346,
+          "end": 443,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "calc_WinningNumber",
+      "nodes": [
+        {
+          "start": 53,
+          "end": 221,
+          "isCollapsed": false
+        },
+        {
+          "start": 100,
+          "end": 212,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "init_tables",
+      "nodes": [
+        {
+          "start": 26,
+          "end": 909,
+          "isCollapsed": false
+        },
+        {
+          "start": 69,
+          "end": 900,
+          "isCollapsed": false
+        },
+        {
+          "start": 237,
+          "end": 450,
+          "isCollapsed": false
+        },
+        {
+          "start": 479,
+          "end": 890,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": [
+        {
+          "start": 703,
+          "end": 1716,
+          "isCollapsed": false
+        },
+        {
+          "start": 730,
+          "end": 1663,
+          "isCollapsed": false
+        },
+        {
+          "start": 1036,
+          "end": 1293,
+          "isCollapsed": false
+        },
+        {
+          "start": 1054,
+          "end": 1281,
+          "isCollapsed": false
+        },
+        {
+          "start": 1412,
+          "end": 1645,
+          "isCollapsed": false
+        },
+        {
+          "start": 1910,
+          "end": 3164,
+          "isCollapsed": false
+        },
+        {
+          "start": 1937,
+          "end": 3049,
+          "isCollapsed": false
+        },
+        {
+          "start": 2243,
+          "end": 2500,
+          "isCollapsed": false
+        },
+        {
+          "start": 2261,
+          "end": 2488,
+          "isCollapsed": false
+        },
+        {
+          "start": 2619,
+          "end": 3031,
+          "isCollapsed": false
+        },
+        {
+          "start": 2765,
+          "end": 3010,
+          "isCollapsed": false
+        },
+        {
+          "start": 3054,
+          "end": 3111,
+          "isCollapsed": false
+        }
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@
   
   // read file
   call util:readFile("Disk://input_day6.txt", sInput)
-  // sInput[0] = "905,103 -> 905,82" 
+  // sInput[0] = "1,1,3,5,3,1,....." 
   
   call str:splitString(sInput,",", lResult)
   

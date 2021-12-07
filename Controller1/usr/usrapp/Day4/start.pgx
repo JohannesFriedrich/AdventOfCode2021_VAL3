@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nTable" type="num" xsi:type="array" size="1" />
+      <Local name="l_nBingoIndex" type="num" xsi:type="array" size="1" />
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nResult" type="num" xsi:type="array" size="1" />
+      <Local name="l_bAllWon" type="bool" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // read file
+  call util:readFile("Disk://input_day4.txt", sInput)
+  // sInput[0] = "26,38,2,15,....." 
+  
+  // parse Bingo-Numbers
+  call str:splitString(sInput[0],"," ,lResult)
+  call util:vec2num(lResult.sString[0], nBingoNumbers1)
+  
+  call str:splitString(sInput[1],"," ,lResult)
+  call util:vec2num(lResult.sString[0], nBingoNumbers2)
+  
+  call util:mergeVectors(nBingoNumbers1,nBingoNumbers2, nBingoNumbers)
+  
+  // Now nBingoNumbers
+  
+  // parse tables
+  delete(lResult[1])
+  delete(lResult[0])
+  
+  // prepare tables
+  call size_tables()
+  call init_tables()
+  
+  // TEST
+  //call check_table(tTable_empty.nMatrix, bWinner)
+  
+  // PUZZLE 1 
+  l_nBingoIndex = 0
+  bWinner = false
+  while bWinner == false
+    for l_nTable = 0 to size(tTable)-1
+      
+      // check if current bingo number is in matrix
+      call findNumberInMatrix(tTable[l_nTable].nMatrix, nBingoNumbers[l_nBingoIndex], nIndexX, nIndexY, bFound)
+      
+      // if yes: remove it in tTable_remove and add 1 to tTable_empty on same position
+      if bFound
+        for l_nElement = 0 to size(nIndexX)-1
+          tTable_remove[l_nTable].nMatrix[nIndexX[l_nElement], nIndexY[l_nElement]] = 0
+          tTable_empty[l_nTable].nMatrix[nIndexX[l_nElement], nIndexY[l_nElement]] = 1
+        endFor
+      endIf
+      
+      // check if we have a winner!
+      call check_table(tTable_empty[l_nTable].nMatrix, bWinner)
+    
+      if bWinner
+        call calc_WinningNumber(tTable_remove[l_nTable].nMatrix, nBingoNumbers[l_nBingoIndex], l_nResult)
+        call util:printNum(l_nResult)
+        // to break the for loop
+        l_nTable = size(tTable)+1
+      endIf
+      
+    endFor
+    
+    l_nBingoIndex = l_nBingoIndex +1
+  endWhile
+  
+  // 58374
+  
+  // PUZZLE 2
+  
+  call size_tables()
+  call init_tables()
+  
+  resize(bHasWon,1,1)
+  bHasWon=false
+  resize(bHasWon,1,size(tTable))
+  
+  l_nBingoIndex = 0
+  bWinner = false
+  while bWinner == false
+    for l_nTable = 0 to size(tTable)-1
+      
+      // check if current bingo number is in matrix
+      call findNumberInMatrix(tTable[l_nTable].nMatrix, nBingoNumbers[l_nBingoIndex], nIndexX, nIndexY, bFound)
+      
+      // if yes: remove it in tTable_remove and add 1 to tTable_empty on same position
+      if bFound
+        for l_nElement = 0 to size(nIndexX)-1
+          tTable_remove[l_nTable].nMatrix[nIndexX[l_nElement], nIndexY[l_nElement]] = 0
+          tTable_empty[l_nTable].nMatrix[nIndexX[l_nElement], nIndexY[l_nElement]] = 1
+        endFor
+      endIf
+      
+      // check if we have a winner!
+      call check_table(tTable_empty[l_nTable].nMatrix, bWinner)
+    
+      if bWinner and bHasWon[l_nTable] ==false
+        
+        bHasWon[l_nTable] = true
+        
+        call util:allBool(bHasWon, l_bAllWon)
+        if l_bAllWon
+          call calc_WinningNumber(tTable_remove[l_nTable].nMatrix, nBingoNumbers[l_nBingoIndex], l_nResult)
+          call util:printNum(l_nResult)
+          // to break the for loop
+          l_nTable = size(tTable)+1
+        endIf
+        
+      endIf
+      
+    endFor
+    if bWinner and !l_bAllWon
+      bWinner = false
+    endIf
+    
+    l_nBingoIndex = l_nBingoIndex +1
+  endWhile
+  
+  // 11377
+  
+
+end]]></Code>
+  </Program>
+</Programs>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="rowSum" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nInput" type="num" xsi:type="array" use="reference" dimensions="2" />
+      <Parameter name="x_nResult" type="num" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nCols" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRows" type="num" xsi:type="array" size="1" />
+      <Local name="l_nElement" type="num" xsi:type="array" size="2" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_nRows = size(x_nInput,1)
+  l_nCols = size(x_nInput,2)
+  
+  resize(x_nResult,1,1)
+  x_nResult = 0
+  resize(x_nResult,1,l_nRows)
+  
+  for l_nElement[0] = 0 to l_nRows-1
+    for l_nElement[1] = 0 to l_nCols-1
+      x_nResult[l_nElement[0]] = x_nResult[l_nElement[0]] + x_nInput[l_nElement[0],l_nElement[1]]
+    endFor
+  endFor
+  
+  
+  
+end]]></Code>
+  </Program>
+</Programs>

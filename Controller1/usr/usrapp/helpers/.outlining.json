@@ -315,32 +315,6 @@
     },
     {
       "mode": 3,
-      "name": "mergeVectors",
-      "nodes": [
-        {
-          "start": 201,
-          "end": 425,
-          "isCollapsed": false
-        },
-        {
-          "start": 245,
-          "end": 411,
-          "isCollapsed": false
-        },
-        {
-          "start": 331,
-          "end": 401,
-          "isCollapsed": false
-        }
-      ]
-    },
-    {
-      "mode": 3,
-      "name": "start",
-      "nodes": []
-    },
-    {
-      "mode": 3,
       "name": "vecMax",
       "nodes": [
         {
@@ -378,6 +352,75 @@
         {
           "start": 239,
           "end": 294,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "rowSum",
+      "nodes": [
+        {
+          "start": 145,
+          "end": 336,
+          "isCollapsed": false
+        },
+        {
+          "start": 184,
+          "end": 327,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": [
+        {
+          "start": 1459,
+          "end": 1633,
+          "isCollapsed": false
+        },
+        {
+          "start": 1500,
+          "end": 1624,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "colSum",
+      "nodes": [
+        {
+          "start": 145,
+          "end": 336,
+          "isCollapsed": false
+        },
+        {
+          "start": 184,
+          "end": 327,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "mergeVectors",
+      "nodes": [
+        {
+          "start": 201,
+          "end": 425,
+          "isCollapsed": false
+        },
+        {
+          "start": 245,
+          "end": 411,
+          "isCollapsed": false
+        },
+        {
+          "start": 331,
+          "end": 401,
           "isCollapsed": false
         }
       ]

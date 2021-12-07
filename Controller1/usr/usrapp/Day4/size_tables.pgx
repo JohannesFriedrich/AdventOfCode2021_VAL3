@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="size_tables">
+    <Code><![CDATA[begin
+  
+  // input tables
+  resize(tTable.nMatrix,1,1)
+  resize(tTable.nMatrix,2,1)
+  resize(tTable,1,1)
+  tTable.nMatrix[0,0] = 0
+  resize(tTable.nMatrix,1,5)
+  resize(tTable.nMatrix,2,5)
+  
+  // table to remove numbers with 0s
+  resize(tTable_remove.nMatrix,1,1)
+  resize(tTable_remove.nMatrix,2,1)
+  resize(tTable_remove,1,1)
+  tTable_remove.nMatrix[0,0] = 0
+  resize(tTable_remove.nMatrix,1,5)
+  resize(tTable_remove.nMatrix,2,5)
+  
+  // table_empty to fill with 1s
+  resize(tTable_empty.nMatrix,1,1)
+  resize(tTable_empty.nMatrix,2,1)
+  resize(tTable_empty,1,1)
+  tTable_empty.nMatrix[0,0] = 0
+  resize(tTable_empty.nMatrix,1,5)
+  resize(tTable_empty.nMatrix,2,5)
+  
+  
+end]]></Code>
+  </Program>
+</Programs>
