@@ -61,6 +61,16 @@
   call bin2dec(l_nBin, l_nRes)
   call printNum(l_nRes)
   
-end ]]></Code>
+  ? "## test mergeVectors"
+  nTest2[0] = 5
+  nTest2[1] = -3
+  nTest2[2] = 10
+  nTest2[4] = -1
+  
+  call mergeVectors(nTest, nTest2, nResult)
+  call printNum(nResult)
+  
+  
+end  ]]></Code>
   </Program>
 </Programs>

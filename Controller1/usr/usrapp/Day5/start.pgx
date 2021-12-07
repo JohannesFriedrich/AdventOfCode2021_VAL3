@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nCounter" type="num" xsi:type="array" size="1" />
+      <Local name="l_sLine" type="string" xsi:type="array" size="1" />
+      <Local name="l_nString" type="num" xsi:type="array" size="1" />
+      <Local name="l_nIntPoints" type="num" xsi:type="array" size="1" />
+      <Local name="l_nX" type="num" xsi:type="array" size="1" />
+      <Local name="l_nY" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // read file
+  call util:readFile("Disk://input_day5.txt", sInput)
+  // sInput[0] = "905,103 -> 905,82" 
+  
+  call str:splitString(sInput," -> ", lResult)
+  
+  resize(sX1, 1, size(lResult))
+  resize(sY1, 1, size(lResult))
+  resize(sX2, 1, size(lResult))
+  resize(sY2, 1, size(lResult))
+  
+  // parse x1,y1,x2,y2 to string variables
+  for l_nElement = 0 to size(lResult)-1
+    for l_nString = 0 to size(lResult[l_nElement].sString)-1
+      l_sLine = lResult[l_nElement].sString[l_nString]
+
+      call str:splitString(l_sLine, ",", lTemp)
+      if l_nString == 0
+        sX1[l_nElement] = lTemp.sString[0]
+        sY1[l_nElement] = lTemp.sString[1]
+      else
+        sX2[l_nElement] = lTemp.sString[0]
+        sY2[l_nElement] = lTemp.sString[1]
+      endIf
+    endFor
+  endFor
+  
+  // convert strings to nums
+  call util:vec2num(sX1, nX1)
+  call util:vec2num(sY1, nY1)
+  call util:vec2num(sX2, nX2)
+  call util:vec2num(sY2, nY2)
+  
+  call size_grid()
+  
+  // PUZZLE 1
+  for l_nElement = 0 to size(nX1)-1
+    call get_int_points(nX1[l_nElement],nY1[l_nElement],nX2[l_nElement],nY2[l_nElement], nIntX, nIntY)
+    if((nX2[l_nElement]-nX1[l_nElement]) == 0) or ((nY2[l_nElement]-nY1[l_nElement]) == 0)
+      for l_nIntPoints = 0 to min(size(nIntX), size(nIntY))-1
+        nGrid[nIntX[l_nIntPoints],nIntY[l_nIntPoints]] = nGrid[nIntX[l_nIntPoints],nIntY[l_nIntPoints]] + 1
+      endFor
+    endIf
+  endFor
+  
+  // now find entries in nGrid >=2
+  l_nCounter = 0
+  for l_nX = 0 to size(nGrid,1)-1
+    for l_nY = 0 to size(nGrid,2)-1
+      if nGrid[l_nX, l_nY] >=2
+        l_nCounter = l_nCounter +1
+      endIf
+    endFor
+  endFor
+  
+  call util:printNum(l_nCounter)
+  // 6267
+  
+  
+  // PUZZLE 2
+ call size_grid()
+  
+  // start calculation
+  for l_nElement = 0 to size(nX1)-1
+    call get_int_points(nX1[l_nElement],nY1[l_nElement],nX2[l_nElement],nY2[l_nElement], nIntX, nIntY)
+    for l_nIntPoints = 0 to min(size(nIntX), size(nIntY))-1
+      nGrid[nIntX[l_nIntPoints],nIntY[l_nIntPoints]] = nGrid[nIntX[l_nIntPoints],nIntY[l_nIntPoints]] + 1
+    endFor
+  endFor
+  
+  // now find entries in nGrid >=2
+  l_nCounter = 0
+  for l_nX = 0 to size(nGrid,1)-1
+    for l_nY = 0 to size(nGrid,2)-1
+      if nGrid[l_nX, l_nY] >=2
+        l_nCounter = l_nCounter +1
+      endIf
+    endFor
+  endFor
+  
+  call util:printNum(l_nCounter)
+  // 20196
+  
+  
+end]]></Code>
+  </Program>
+</Programs>

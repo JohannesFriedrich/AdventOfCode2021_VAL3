@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="size_grid">
+    <Locals>
+      <Local name="l_nGridMax" type="num" xsi:type="array" size="2" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // helpers
+  resize(nGrid,1,1)
+  resize(nGrid,2,1)
+  nGrid[0,0]=0
+  
+  // size grid
+  call util:vecMax(nX1, l_nGridMax[0])
+  call util:vecMax(nX2, l_nGridMax[1])
+  resize(nGrid,1,max(l_nGridMax[0], l_nGridMax[1])+1)
+  
+  call util:vecMax(nY1, l_nGridMax[0])
+  call util:vecMax(nY2, l_nGridMax[1])
+  resize(nGrid,2,max(l_nGridMax[0], l_nGridMax[1])+1)
+end]]></Code>
+  </Program>
+</Programs>

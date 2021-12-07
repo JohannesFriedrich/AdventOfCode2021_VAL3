@@ -15,6 +15,7 @@
   
   l_nCoutner = 0
   resize(x_nResult,1,1)
+  x_nResult = 0
   
   for l_nElement = x_nStart to x_nEnd-1 step x_nStep
     l_nCoutner = l_nCoutner+1

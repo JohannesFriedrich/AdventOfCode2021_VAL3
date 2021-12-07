@@ -11,18 +11,25 @@
       <Local name="l_sCopy" type="string" xsi:type="array" size="1" />
       <Local name="l_nValue" type="num" xsi:type="array" size="1" />
       <Local name="l_bSucces" type="bool" xsi:type="array" size="1" />
+      <Local name="l_nSucessCounter" type="num" xsi:type="array" size="1" />
     </Locals>
     <Code><![CDATA[begin
   
   l_nLength = size(x_sInput)
   x_nResult[0] = 0
-  resize(x_nResult,1,l_nLength)
+  resize(x_nResult,1,1)
   
   for l_nElement = 0 to l_nLength-1
     // copy element
     l_sCopy = x_sInput[l_nElement]
     toNum(l_sCopy, l_nValue, l_bSucces)
-    x_nResult[l_nElement] = l_nValue
+    if l_bSucces 
+      if l_nElement !=0
+        append(x_nResult)
+      endIf
+      x_nResult[l_nSucessCounter] = l_nValue
+      l_nSucessCounter = l_nSucessCounter +1
+    endIf
   endFor
   
 end]]></Code>

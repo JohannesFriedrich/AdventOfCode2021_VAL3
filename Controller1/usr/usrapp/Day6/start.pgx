@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Code><![CDATA[begin
+  
+  // read file
+  call util:readFile("Disk://input_day6.txt", sInput)
+  // sInput[0] = "905,103 -> 905,82" 
+  
+  call str:splitString(sInput,",", lResult)
+  
+  call util:vec2num(lResult.sString, nInput)
+  call util:vec2num(lResult[1].sString, nInput2)
+
+  call util:mergeVectors(nInput,nInput2, nResult)
+  call util:vec2num(lResult[2].sString, nInput2)
+  call util:mergeVectors(nResult,nInput2, nInput)
+  
+  // PUZZLE 1
+  call generation_generator(80)
+  // 361169
+  
+  // PUZZLE 2
+  call generation_generator(256)
+  // 1634946868992
+  
+end]]></Code>
+  </Program>
+</Programs>

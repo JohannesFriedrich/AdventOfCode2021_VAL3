@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="mergeVectors" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nInput_1" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nInput_2" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nResult" type="num" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nLength" type="num" xsi:type="array" size="2" />
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_nLength[0] = size(x_nInput_1)
+  l_nLength[1] = size(x_nInput_2)
+  resize(x_nResult,1,1)
+  x_nResult[0] = 0
+  resize(x_nResult,1,l_nLength[0]+l_nLength[1])
+  
+  // combine the two inputs
+  for l_nElement = 0 to size(x_nResult)-1
+    if l_nElement < l_nLength[0]
+      x_nResult[l_nElement] = x_nInput_1[l_nElement]
+    else
+      x_nResult[l_nElement] = x_nInput_2[l_nElement-l_nLength[0]]
+    endIf
+    
+  endFor
+  
+end]]></Code>
+  </Program>
+</Programs>

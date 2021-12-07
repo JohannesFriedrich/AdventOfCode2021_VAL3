@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="get_int_points">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nX1" type="num" xsi:type="element" />
+      <Parameter name="x_nY1" type="num" xsi:type="element" />
+      <Parameter name="x_nX2" type="num" xsi:type="element" />
+      <Parameter name="x_nY2" type="num" xsi:type="element" />
+      <Parameter name="x_nResX" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nResY" type="num" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nResLength" type="num" xsi:type="array" size="2" />
+      <Local name="l_nSign" type="num" xsi:type="array" size="2" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  resize(nResRangeX,1,1)
+  nResRangeX = 0
+  resize(nResRangeY,1,1)
+  nResRangeY = 0
+  
+  resize(x_nResX,1,1)
+  x_nResX = 0
+  resize(x_nResY,1,1)
+  x_nResY = 0
+  
+  l_nSign[0] = sel(x_nX1 > x_nX2, -1,1)
+  l_nSign[1] = sel(x_nY1 > x_nY2, -1,1)
+  
+  if(x_nX1 - x_nX2) == 0 and (x_nY1 - x_nY2) != 0
+    nResRangeX = x_nX1
+    call util:range(x_nY1,x_nY2+1, l_nSign[1], nResRangeY)
+  elseIf(x_nY1 - x_nY2) == 0 and (x_nX1 - x_nX2) != 0
+    call util:range(x_nX1,x_nX2+1, l_nSign[0], nResRangeX)
+    nResRangeY = x_nY1
+  elseIf(x_nX1 - x_nX2) == 0 and (x_nY1 - x_nY2) == 0
+    nResRangeX = x_nX1
+    nResRangeY = x_nY1
+  else
+    call util:range(x_nX1,x_nX2+1, l_nSign, nResRangeX)
+    call util:range(x_nY1,x_nY2+1, l_nSign[1], nResRangeY)
+  endIf
+  
+  l_nResLength[0] = max(size(nResRangeX), size(nResRangeY))
+  l_nResLength[1] = min(size(nResRangeX), size(nResRangeY))
+
+  resize(x_nResX,1,1)
+  x_nResX = 0
+  resize(x_nResX,1,l_nResLength)
+  resize(x_nResY,1,1)
+  x_nResY = 0
+  resize(x_nResY,1,l_nResLength)
+  
+  if size(nResRangeX) == size(nResRangeY)
+    // diagonals
+    for l_nElement = 0 to l_nResLength[0]-1
+      x_nResX[l_nElement] = nResRangeX[l_nElement]
+      x_nResY[l_nElement] = nResRangeY[l_nElement]
+    endFor
+  else
+    // horizontal or vertical
+    for l_nElement = 0 to l_nResLength[0]-1
+      if size(nResRangeX) == 1
+        // x-coordinate is not changing -> keep constant
+        x_nResX[l_nElement] = nResRangeX
+        x_nResY[l_nElement] = nResRangeY[l_nElement]
+      else
+        x_nResX[l_nElement] = nResRangeX[l_nElement]
+        x_nResY[l_nElement] = nResRangeY
+      endIf
+      
+    endFor
+    
+  endIf
+      
+end]]></Code>
+  </Program>
+</Programs>

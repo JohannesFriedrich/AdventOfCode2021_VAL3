@@ -2,28 +2,6 @@
   "programs": [
     {
       "mode": 3,
-      "name": "vec2num",
-      "nodes": [
-        {
-          "start": 94,
-          "end": 268,
-          "isCollapsed": false
-        }
-      ]
-    },
-    {
-      "mode": 3,
-      "name": "range",
-      "nodes": [
-        {
-          "start": 55,
-          "end": 205,
-          "isCollapsed": false
-        }
-      ]
-    },
-    {
-      "mode": 3,
       "name": "printStr",
       "nodes": [
         {
@@ -337,8 +315,72 @@
     },
     {
       "mode": 3,
+      "name": "mergeVectors",
+      "nodes": [
+        {
+          "start": 201,
+          "end": 425,
+          "isCollapsed": false
+        },
+        {
+          "start": 245,
+          "end": 411,
+          "isCollapsed": false
+        },
+        {
+          "start": 331,
+          "end": 401,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
       "name": "start",
       "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "vecMax",
+      "nodes": [
+        {
+          "start": 30,
+          "end": 124,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "range",
+      "nodes": [
+        {
+          "start": 71,
+          "end": 221,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "vec2num",
+      "nodes": [
+        {
+          "start": 86,
+          "end": 403,
+          "isCollapsed": false
+        },
+        {
+          "start": 219,
+          "end": 394,
+          "isCollapsed": false
+        },
+        {
+          "start": 239,
+          "end": 294,
+          "isCollapsed": false
+        }
+      ]
     }
   ]
 }

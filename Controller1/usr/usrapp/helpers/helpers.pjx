@@ -5,10 +5,12 @@
     <Program file="allBool.pgx" />
     <Program file="anyBool.pgx" />
     <Program file="bin2dec.pgx" />
+    <Program file="bindRow.pgx" />
     <Program file="bool2num.pgx" />
     <Program file="compare.pgx" />
     <Program file="countBool.pgx" />
     <Program file="extractNum.pgx" />
+    <Program file="mergeVectors.pgx" />
     <Program file="num2bool.pgx" />
     <Program file="printBool.pgx" />
     <Program file="printNum.pgx" />
@@ -19,6 +21,7 @@
     <Program file="stop.pgx" />
     <Program file="uniqueNum.pgx" />
     <Program file="vec2num.pgx" />
+    <Program file="vecMax.pgx" />
   </Programs>
   <Database>
     <Data file="helpers.dtx" />

@@ -1,0 +1,35 @@
+﻿{
+  "programs": [
+    {
+      "mode": 3,
+      "name": "generation_generator",
+      "nodes": [
+        {
+          "start": 90,
+          "end": 276,
+          "isCollapsed": false
+        },
+        {
+          "start": 131,
+          "end": 267,
+          "isCollapsed": false
+        },
+        {
+          "start": 159,
+          "end": 256,
+          "isCollapsed": false
+        },
+        {
+          "start": 282,
+          "end": 475,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="generation_generator">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nDays" type="num" xsi:type="element" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nValue" type="num" xsi:type="array" size="1" />
+      <Local name="l_nDays" type="num" xsi:type="array" size="1" />
+      <Local name="l_nNewFishes" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRESULT" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // count values
+  resize(nCounter,1,1)
+  nCounter = 0
+  resize(nCounter,1,9)
+  for l_nElement = 0 to size(nInput)-1
+    for l_nValue = 0 to 8
+      if nInput[l_nElement] == l_nValue
+        nCounter[l_nValue] = nCounter[l_nValue] + 1
+      endIf
+    endFor
+  endFor
+  
+  for l_nDays = 1 to x_nDays
+    l_nNewFishes = nCounter[0]
+  
+    delete(nCounter[0])
+  
+    nCounter[6] = nCounter[6] + l_nNewFishes
+    append(nCounter)
+    nCounter[8] = l_nNewFishes
+  endFor
+
+  call math:sum(nCounter, l_nRESULT)
+  call util:printNum(l_nRESULT)
+  
+  
+end]]></Code>
+  </Program>
+</Programs>
