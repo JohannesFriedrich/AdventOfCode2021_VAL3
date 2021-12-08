@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nString" type="num" xsi:type="array" size="1" />
+      <Local name="l_nResult" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // read file
+  call util:readFile("Disk://input_day8.txt", sInput)
+  // sInput[0] = "begfcd fabg aecgbdf ..... | cbgef befdcg bceaf fagb"
+  
+  call str:splitString(sInput," | ", lResult)
+  // lResult.sString[0] = "begfcd fabg aecgbdf ...."
+  // lResult.sString[1] = "cbgef befdcg bceaf fagb"
+  
+  // PUZZLE 1
+  l_nResult = 0
+  for l_nElement = 0 to size(lResult)-1
+    call str:splitString(lResult[l_nElement].sString[1], " ", lResultSplit)
+    for l_nString = 0 to size(lResultSplit.sString)-1
+      // check if stringlength is 2 (#1), 3 (#7), 4 (#4) or 7 (#8)
+      if len(lResultSplit.sString[l_nString]) == 2 or len(lResultSplit.sString[l_nString]) ==3 or len(lResultSplit.sString[l_nString]) == 4 or len(lResultSplit.sString[l_nString]) == 7
+        l_nResult = l_nResult+1
+      endIf
+    endFor
+  endFor
+  
+  call util:printNum(l_nResult)
+  // 367
+  
+end]]></Code>
+  </Program>
+</Programs>
