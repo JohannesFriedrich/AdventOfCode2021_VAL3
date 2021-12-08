@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nMean" type="num" xsi:type="array" size="1" />
+      <Local name="l_nMedian" type="num" xsi:type="array" size="1" />
+      <Local name="l_nVariance" type="num" xsi:type="array" size="1" />
+      <Local name="l_nStandardDeviation" type="num" xsi:type="array" size="1" />
+      <Local name="l_nGeoMean" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRes" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  nInput[0] = 2
+  nInput[1] = 1
+  nInput[2] = 6
+  nInput[3] = 5
+  nInput[4] = 2
+  nInput[5] = 4
+  nInput[6] = 1
+  nInput[7] = 7
+  
+  call getMean(nInput, l_nRes)
+  ? "Mittelwert: " + toString(".4", l_nRes)
+  
+  call getMedian(nInput, l_nRes)
+  ? "Median: " + toString(".4", l_nRes)
+  
+  call getVariance(nInput, l_nRes)
+  ? "Varianz: " + toString(".4", l_nRes)
+  
+  call getStandardDeviation(nInput, l_nRes)
+  ? "Std. Deviation: " + toString(".4", l_nRes)
+  
+  call getGeometricMean(nInput, l_nRes)
+  ? "Geom. Mean: " + toString(".4", l_nRes)
+ 
+  call getHarmonicMean(nInput, l_nRes)
+  ? "Harm. Mean: " + toString(".4", l_nRes)
+end]]></Code>
+  </Program>
+</Programs>

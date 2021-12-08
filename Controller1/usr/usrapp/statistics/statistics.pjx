@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s8.12Cs9_BS2378" stackSize="5000" millimeterUnit="true" />
+  <Programs>
+    <Program file="getGeometricMean.pgx" />
+    <Program file="getHarmonicMean.pgx" />
+    <Program file="getMean.pgx" />
+    <Program file="getMedian.pgx" />
+    <Program file="getStandardDeviation.pgx" />
+    <Program file="getVariance.pgx" />
+    <Program file="start.pgx" />
+    <Program file="stop.pgx" />
+  </Programs>
+  <Database>
+    <Data file="statistics.dtx" />
+  </Database>
+  <Libraries />
+</Project>

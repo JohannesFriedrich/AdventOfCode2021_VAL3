@@ -34,24 +34,8 @@
     },
     {
       "mode": 3,
-      "name": "start",
-      "nodes": []
-    },
-    {
-      "mode": 3,
       "name": "stop",
       "nodes": []
-    },
-    {
-      "mode": 3,
-      "name": "sum",
-      "nodes": [
-        {
-          "start": 59,
-          "end": 150,
-          "isCollapsed": false
-        }
-      ]
     },
     {
       "mode": 3,
@@ -86,6 +70,44 @@
         {
           "start": 96,
           "end": 219,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "sum",
+      "nodes": [
+        {
+          "start": 59,
+          "end": 150,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "square",
+      "nodes": [
+        {
+          "start": 115,
+          "end": 228,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "root",
+      "nodes": [
+        {
+          "start": 115,
+          "end": 218,
           "isCollapsed": false
         }
       ]

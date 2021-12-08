@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="getVariance" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nInput" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nVariance" type="num" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nMean" type="num" xsi:type="array" size="1" />
+      <Local name="l_nCount" type="num" xsi:type="array" size="1" />
+      <Local name="l_nSum" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_nSum = 0
+  // get mean of the input numbers  
+  call getMean(x_nInput, l_nMean)
+
+  for l_nCount = 0 to size(x_nInput)-1
+    l_nSum = l_nSum + power(x_nInput[l_nCount]-l_nMean, 2)
+  endFor
+  
+  x_nVariance = l_nSum/size(x_nInput)
+  
+end]]></Code>
+  </Program>
+</Programs>

@@ -1,35 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CellUserOptions>
   <Controller Name="Controller1">
-    <Application>Disk://math/math.pjx</Application>
-    <Application>Disk://helpers/helpers.pjx</Application>
-    <Application>Disk://types/lists/lists.pjx</Application>
     <Application>Disk://types/lists_string_num/lists_string_num.pjx</Application>
-    <Application>Disk://string/string.pjx</Application>
     <Application>Disk://Day4/Day4.pjx</Application>
     <Application>Disk://Day4/table/table.pjx</Application>
     <Application>Disk://Day6/Day6.pjx</Application>
+    <Application>Disk://Day7/Day7.pjx</Application>
+    <Application>Disk://math/math.pjx</Application>
+    <Application>Disk://helpers/helpers.pjx</Application>
+    <Application>Disk://types/lists/lists.pjx</Application>
+    <Application>Disk://string/string.pjx</Application>
+    <Application>Disk://Day8/Day8.pjx</Application>
   </Controller>
   <Option Name="DataTreeView">
     <Nodes>
       <Node Path="AdventOfCode2021" IsExpanded="true" />
       <Node Path="AdventOfCode2021\Controller1" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##Day4#Day4.pjx" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##Day6#Day6.pjx" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx\bool" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx\num" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##math#math.pjx\num" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##Day7#Day7.pjx" IsExpanded="true" />
     </Nodes>
   </Option>
   <Option Name="CellExplorer">
     <Nodes>
       <Node Path="AdventOfCode2021" IsExpanded="true" />
       <Node Path="AdventOfCode2021\Controller1" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##Day4#Day4.pjx" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##Day4#Day4.pjx\References\table" IsExpanded="true" />
       <Node Path="AdventOfCode2021\Controller1\Disk:##Day4#Day4.pjx\start" IsExpanded="true" />
-      <Node Path="AdventOfCode2021\Controller1\Disk:##helpers#helpers.pjx\mergeVectors" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##Day7#Day7.pjx" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##Day8#Day8.pjx" IsExpanded="true" />
+      <Node Path="AdventOfCode2021\Controller1\Disk:##Day8#Day8.pjx\start" IsExpanded="true" />
     </Nodes>
   </Option>
   <Option Name="GeometryView">
@@ -41,6 +38,8 @@
     <Breakpoints>
       <Breakpoint Controller="Controller1" Application="Disk://helpers/helpers.pjx" ProgramName="start" Line="85" />
       <Breakpoint Controller="Controller1" Application="Disk://Day4/Day4.pjx" ProgramName="start" Line="116" />
+      <Breakpoint Controller="Controller1" Application="Disk://math/math.pjx" ProgramName="start" Line="14" />
+      <Breakpoint Controller="Controller1" Application="Disk://string/string.pjx" ProgramName="start" Line="15" />
     </Breakpoints>
   </Option>
   <Option Name="IOsControlPanel">
@@ -48,15 +47,8 @@
   </Option>
   <Option Name="Watches">
     <Watches>
-      <Watch Controller="Controller1" Application="Disk://Day4/Day4.pjx">nResult</Watch>
-      <Watch Controller="Controller1" Application="Disk://helpers/helpers.pjx">nMatrix</Watch>
-      <Watch Controller="Controller1" Application="Disk://helpers/helpers.pjx">nResult</Watch>
-      <Watch Controller="Controller1" Application="Disk://Day4/Day4.pjx">nIndexX</Watch>
-      <Watch Controller="Controller1" Application="Disk://Day4/Day4.pjx">nIndexY</Watch>
-      <Watch Controller="Controller1" Application="Disk://Day4/Day4.pjx">bWinner</Watch>
-      <Watch Controller="Controller1" Application="Disk://Day4/Day4.pjx">bHasWon</Watch>
-      <Watch Controller="Controller1" Application="Disk://Day4/Day4.pjx">nBingoNumbers</Watch>
-      <Watch Controller="Controller1" Application="Disk://Day4/Day4.pjx">tTable_empty</Watch>
+      <Watch Controller="Controller1" Application="Disk://Day8/Day8.pjx">lResult</Watch>
+      <Watch Controller="Controller1" Application="Disk://Day8/Day8.pjx">lResultSplit</Watch>
     </Watches>
   </Option>
   <Option Name="ExpressionWatches">

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nString" type="num" xsi:type="array" size="1" />
+      <Local name="l_nCounter" type="num" xsi:type="array" size="1" />
+      <Local name="l_nResult" type="num" xsi:type="array" size="1" />
+      <Local name="l_nGuess" type="num" xsi:type="array" size="1" />
+      <Local name="l_nDiff" type="num" xsi:type="array" size="1" />
+      <Local name="l_nFuel" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // read file
+  call util:readFile("Disk://input_day7_test.txt", sInput)
+  // sInput[0] = "1101,1,29,67,1102,....."
+  
+  call str:splitString(sInput,",", lResult)
+  
+  for l_nElement = 0 to size(lResult)-1
+    
+    // check for empty strings
+    for l_nString = 0 to size(lResult[l_nElement].sString)-1
+      if lResult[l_nElement].sString[l_nString] == ""
+        delete(lResult[l_nElement].sString[l_nString])
+      endIf
+    endFor
+    
+    if l_nElement%2 == 0
+      call util:vec2num(lResult[l_nElement].sString, nInput1)  
+    else
+      call util:vec2num(lResult[l_nElement].sString, nInput2)  
+    endIf
+    
+    if l_nElement == 1
+      call util:mergeVectors(nInput1,nInput2, nResult)
+    elseIf l_nElement >=2
+      if l_nElement % 2 == 0
+        call util:mergeVectors(nResult,nInput1, nResult2)
+      else
+        call util:mergeVectors(nResult2,nInput2, nResult)
+      endIf
+      
+    endIf
+  endFor
+  
+  // PUZZLE 1
+  // calculate median 
+  call stat:getMedian(nResult2, nMedian)
+  
+  // calculate difference to median and sum the differences up -> l_nResult
+  resize(nDiff,1,size(nResult2))
+  for l_nElement = 0 to size(nResult2)-1
+    nDiff[l_nElement] = abs(nResult2[l_nElement] - nMedian)
+  endFor
+  
+  call math:sum(nDiff, l_nResult)
+  
+  call util:printNum(l_nResult)
+  // 344735
+  
+  // PUZZLE 2
+//  resize(nFuel,1,10)
+//  resize(nDiffGuess,1,11)
+//  for l_nGuess = 0 to 999 step 10
+//    if l_nGuess %10 == 0
+//      ? l_nGuess
+//    endIf
+      
+//    for l_nElement = 0 to size(nResult2)-1
+//      l_nDiff = abs(nInput1[l_nElement] - l_nGuess)
+//      call calc_fuel(l_nDiff,nFuel[l_nElement])
+//    endFor
+    
+//    call math:sum(nFuel,nDiffGuess[l_nGuess/10])
+//  endFor
+  
+  
+end]]></Code>
+  </Program>
+</Programs>

@@ -39,11 +39,6 @@
     },
     {
       "mode": 3,
-      "name": "start",
-      "nodes": []
-    },
-    {
-      "mode": 3,
       "name": "splitString",
       "nodes": [
         {
@@ -64,6 +59,33 @@
         {
           "start": 503,
           "end": 577,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "toUppercase",
+      "nodes": [
+        {
+          "start": 28,
+          "end": 219,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "toLowercase",
+      "nodes": [
+        {
+          "start": 28,
+          "end": 218,
           "isCollapsed": false
         }
       ]

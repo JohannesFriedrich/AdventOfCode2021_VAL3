@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="getHarmonicMean" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nInput" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nMean" type="num" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nCount" type="num" xsi:type="array" size="1" />
+      <Local name="l_nSum" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_nSum = 0
+  
+  for l_nCount = 0 to size(x_nInput)-1
+    l_nSum = l_nSum + 1/x_nInput[l_nCount]  
+  endFor
+  
+  x_nMean = size(x_nInput)/ l_nSum
+  
+end]]></Code>
+  </Program>
+</Programs>

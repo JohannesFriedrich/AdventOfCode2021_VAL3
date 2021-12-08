@@ -1,0 +1,94 @@
+﻿{
+  "programs": [
+    {
+      "mode": 3,
+      "name": "getMean",
+      "nodes": [
+        {
+          "start": 27,
+          "end": 115,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "getMedian",
+      "nodes": [
+        {
+          "start": 296,
+          "end": 382,
+          "isCollapsed": false
+        },
+        {
+          "start": 389,
+          "end": 721,
+          "isCollapsed": false
+        },
+        {
+          "start": 459,
+          "end": 598,
+          "isCollapsed": false
+        },
+        {
+          "start": 507,
+          "end": 587,
+          "isCollapsed": false
+        },
+        {
+          "start": 727,
+          "end": 919,
+          "isCollapsed": false
+        },
+        {
+          "start": 839,
+          "end": 911,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "getVariance",
+      "nodes": [
+        {
+          "start": 96,
+          "end": 200,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "getStandardDeviation",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "getGeometricMean",
+      "nodes": [
+        {
+          "start": 28,
+          "end": 118,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "getHarmonicMean",
+      "nodes": [
+        {
+          "start": 27,
+          "end": 117,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": []
+    }
+  ]
+}

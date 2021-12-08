@@ -16,6 +16,8 @@
   
   call trimString(sInput, sResult)
   
+  call toUppercase(sInput[1], sResult)
+  
 end]]></Code>
   </Program>
 </Programs>

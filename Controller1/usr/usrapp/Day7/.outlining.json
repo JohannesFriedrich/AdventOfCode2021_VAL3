@@ -1,0 +1,65 @@
+﻿{
+  "programs": [
+    {
+      "mode": 3,
+      "name": "calc_fuel",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": [
+        {
+          "start": 178,
+          "end": 924,
+          "isCollapsed": false
+        },
+        {
+          "start": 256,
+          "end": 444,
+          "isCollapsed": false
+        },
+        {
+          "start": 319,
+          "end": 433,
+          "isCollapsed": false
+        },
+        {
+          "start": 454,
+          "end": 621,
+          "isCollapsed": false
+        },
+        {
+          "start": 543,
+          "end": 611,
+          "isCollapsed": false
+        },
+        {
+          "start": 631,
+          "end": 915,
+          "isCollapsed": false
+        },
+        {
+          "start": 709,
+          "end": 905,
+          "isCollapsed": false
+        },
+        {
+          "start": 737,
+          "end": 898,
+          "isCollapsed": false
+        },
+        {
+          "start": 824,
+          "end": 886,
+          "isCollapsed": false
+        },
+        {
+          "start": 1120,
+          "end": 1227,
+          "isCollapsed": false
+        }
+      ]
+    }
+  ]
+}

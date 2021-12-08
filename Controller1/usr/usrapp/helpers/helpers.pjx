@@ -11,6 +11,7 @@
     <Program file="compare.pgx" />
     <Program file="countBool.pgx" />
     <Program file="extractNum.pgx" />
+    <Program file="mergeList.pgx" />
     <Program file="mergeVectors.pgx" />
     <Program file="num2bool.pgx" />
     <Program file="printBool.pgx" />

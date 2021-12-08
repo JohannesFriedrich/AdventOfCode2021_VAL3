@@ -1,19 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
-  <Program name="start">
+  <Program name="stop">
     <Code><![CDATA[begin
-  
-  nTest[0] = 0
-  nTest[1] = 2
-  nTest[2] = -4
-  nTest[3] = 10
-  nTest[5] = -3
-  nTest[6] = 4
-  
-  call rollsum(nTest, 3,nResultTest)
-  
-  call square(nTest, nResultTest)
-  
 end]]></Code>
   </Program>
 </Programs>

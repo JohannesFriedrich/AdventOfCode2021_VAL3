@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="getMedian" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_nInput" type="num" xsi:type="array" use="reference" />
+      <Parameter name="x_nMedian" type="num" xsi:type="element" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nCount" type="num" xsi:type="array" size="1" />
+      <Local name="l_nSmallsub" type="num" xsi:type="array" size="1" />
+      <Local name="l_nSort" type="num" xsi:type="array" size="1" />
+      <Local name="l_nTemp" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // do a selection sort: 
+  // The idea of Selection Sort is that we repeatedly find the smallest element in the unsorted part of the array and swap it with the first element in the unsorted part of the array.
+
+  resize(nTemp, 1, size(x_nInput))
+  resize(nCopy, 1, size(x_nInput))
+  
+  for l_nCount = 0 to size(x_nInput)-1
+    nCopy[l_nCount] = x_nInput[l_nCount]
+  endFor
+  
+
+  for l_nCount = 0 to size(nCopy)-1
+    l_nSmallsub = l_nCount
+    
+    for l_nSort = l_nCount+1 to size(nCopy)-1
+      if nCopy[l_nSort] < nCopy[l_nSmallsub]
+        l_nSmallsub = l_nSort
+      endIf
+    endFor
+    
+    l_nTemp = nCopy[l_nCount]
+    nTemp[l_nCount] = nCopy[l_nSmallsub]
+    nCopy[l_nSmallsub] = l_nTemp
+    
+  endFor
+  
+  if size(nCopy)%2 != 0
+    // extract middle value of sorted list
+    x_nMedian = nTemp[((size(nCopy)+1)/2)-1]
+  else
+    x_nMedian = (nTemp[(size(nCopy)/2)-1] + nTemp[size(nCopy)/2])/2
+  endIf
+  
+  
+end]]></Code>
+  </Program>
+</Programs>

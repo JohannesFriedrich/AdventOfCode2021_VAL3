@@ -5,7 +5,9 @@
     <Program file="cumsum.pgx" />
     <Program file="diff.pgx" />
     <Program file="rollsum.pgx" />
+    <Program file="root.pgx" />
     <Program file="sign.pgx" />
+    <Program file="square.pgx" />
     <Program file="start.pgx" />
     <Program file="stop.pgx" />
     <Program file="sum.pgx" />
