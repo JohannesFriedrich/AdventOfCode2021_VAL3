@@ -21,32 +21,36 @@
   x_lResult.sString =""
   resize(x_lResult,1,l_nLength)
   
-  // iterate complete input x_sInput[0] ... x_sInput[l_nLength-1]
-  for l_nElement = 0 to l_nLength-1
+  if x_sPattern == ""
+    call splitWord(x_sInput, x_lResult)
+    return
+  else
+    // iterate complete input x_sInput[0] ... x_sInput[l_nLength-1]
+    for l_nElement = 0 to l_nLength-1
   
-    // copy element
-    l_sLine = x_sInput[l_nElement]
+      // copy element
+      l_sLine = x_sInput[l_nElement]
     
-    // search x_sPattern
-    l_nCount = 0
-    while len(l_sLine)!=0
-      l_nPos=find(l_sLine, x_sPattern)
+      // search x_sPattern
+      l_nCount = 0
+      while len(l_sLine)!=0
+        l_nPos=find(l_sLine, x_sPattern)
     
-      if l_nPos==-1
-        l_nPos=len(l_sLine)
-      endIf
+        if l_nPos==-1
+          l_nPos=len(l_sLine)
+        endIf
       
-      if l_nCount != 0
-        append(x_lResult[l_nElement].sString)
-      endIf
+        if l_nCount != 0
+          append(x_lResult[l_nElement].sString)
+        endIf
         
-      x_lResult[l_nElement].sString[l_nCount] = left(l_sLine,l_nPos)
-      l_sLine = right(l_sLine,max(0,len(l_sLine)-l_nPos-len(x_sPattern)))
-      l_nCount = l_nCount+1
+        x_lResult[l_nElement].sString[l_nCount] = left(l_sLine,l_nPos)
+        l_sLine = right(l_sLine,max(0,len(l_sLine)-l_nPos-len(x_sPattern)))
+        l_nCount = l_nCount+1
      
-    endWhile
-  endFor
-  
+      endWhile
+    endFor
+  endIf
 end]]></Code>
   </Program>
 </Programs>

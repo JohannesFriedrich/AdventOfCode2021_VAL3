@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nResult" type="num" xsi:type="array" size="1" />
+      <Local name="l_nBracket" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // read file
+  call util:readFile("Disk://input_day10.txt", sInput)
+  // sInput[0] = "[({(<((...."
+  
+  call str:splitString(sInput,"", lResult)
+  // lResult.sString[0] = "["
+  // lResult.sString[1] = "("
+  
+  // PUZZLE 1
+  l_nResult = 0
+  resize(sCorrupt,1,1)
+  sCorrupt = ""
+  
+  for l_nElement = 0 to size(lResult)-1
+    // reset sQueue
+    resize(sQueue,1,1)
+    sQueue = ""
+    for l_nBracket = 0 to size(lResult[l_nElement].sString)-1
+      if lResult[l_nElement].sString[l_nBracket] == "(" or lResult[l_nElement].sString[l_nBracket] == "<" or lResult[l_nElement].sString[l_nBracket] == "[" or lResult[l_nElement].sString[l_nBracket] == "{"
+        append(sQueue)
+        sQueue[size(sQueue)-1] = lResult[l_nElement].sString[l_nBracket]
+      elseIf lResult[l_nElement].sString[l_nBracket] == ")" or lResult[l_nElement].sString[l_nBracket] == ">" or lResult[l_nElement].sString[l_nBracket] == "]" or lResult[l_nElement].sString[l_nBracket] == "}"
+        if(sQueue[size(sQueue)-1] == "(" and lResult[l_nElement].sString[l_nBracket] == ")") or (sQueue[size(sQueue)-1] == "<" and lResult[l_nElement].sString[l_nBracket] == ">") or (sQueue[size(sQueue)-1] == "[" and lResult[l_nElement].sString[l_nBracket] == "]") or (sQueue[size(sQueue)-1] == "{" and lResult[l_nElement].sString[l_nBracket] == "}")
+          delete(sQueue[size(sQueue)-1])
+        else
+          // Line corrupt!
+          append(sCorrupt)
+          sCorrupt[size(sCorrupt)-2] = lResult[l_nElement].sString[l_nBracket] 
+          // break out of this for-loop
+          l_nBracket = 1000
+          //endIf
+        endIf
+        
+      endIf
+    endFor
+  endFor
+  
+  delete(sCorrupt[size(sCorrupt)-1])
+  
+  // Calculate sum
+  nSum = 0
+  for l_nElement = 0 to size(sCorrupt)-1
+    if sCorrupt[l_nElement] == ")"
+      nSum = nSum + 3
+    endIf
+    if sCorrupt[l_nElement] == "]"
+      nSum = nSum + 57
+    endIf
+    if sCorrupt[l_nElement] == "}"
+      nSum = nSum + 1197
+    endIf
+    if sCorrupt[l_nElement] == ">"
+      nSum = nSum + 25137
+    endIf
+    
+  endFor
+  
+  ? "PUZZLE 1:"
+  call util:printNum(nSum)
+  ? "############"
+  // 392043
+  
+  // PUZZLE 2
+  nSum = 0
+ 
+  for l_nElement = 0 to size(lResult)-1
+    // reset sQueue
+    bCorrupt = false
+    resize(sQueue,1,1)
+    sQueue = ""
+    for l_nBracket = 0 to size(lResult[l_nElement].sString)-1
+      if lResult[l_nElement].sString[l_nBracket] == "(" or lResult[l_nElement].sString[l_nBracket] == "<" or lResult[l_nElement].sString[l_nBracket] == "[" or lResult[l_nElement].sString[l_nBracket] == "{"
+        append(sQueue)
+        sQueue[size(sQueue)-1] = lResult[l_nElement].sString[l_nBracket]
+      elseIf lResult[l_nElement].sString[l_nBracket] == ")" or lResult[l_nElement].sString[l_nBracket] == ">" or lResult[l_nElement].sString[l_nBracket] == "]" or lResult[l_nElement].sString[l_nBracket] == "}"
+        if(sQueue[size(sQueue)-1] == "(" and lResult[l_nElement].sString[l_nBracket] == ")") or (sQueue[size(sQueue)-1] == "<" and lResult[l_nElement].sString[l_nBracket] == ">") or (sQueue[size(sQueue)-1] == "[" and lResult[l_nElement].sString[l_nBracket] == "]") or (sQueue[size(sQueue)-1] == "{" and lResult[l_nElement].sString[l_nBracket] == "}")
+          delete(sQueue[size(sQueue)-1])
+          bCorrupt = false
+        else
+          // Line not complete!
+          // break out of this for-loop
+          bCorrupt = true
+          l_nBracket = 1000
+        endIf
+      endIf
+    endFor
+    if bCorrupt == false
+      call calc_score()
+    endIf
+  endFor
+  
+  delete(nCompletion[size(sCorrupt)])
+  
+  call stat:getMedian(nCompletion, nResult)
+  ? "PUZZLE 2:"
+  call util:printNum(nResult)
+  
+  
+end]]></Code>
+  </Program>
+</Programs>

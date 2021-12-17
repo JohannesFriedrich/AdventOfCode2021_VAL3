@@ -39,32 +39,6 @@
     },
     {
       "mode": 3,
-      "name": "splitString",
-      "nodes": [
-        {
-          "start": 221,
-          "end": 785,
-          "isCollapsed": false
-        },
-        {
-          "start": 364,
-          "end": 776,
-          "isCollapsed": false
-        },
-        {
-          "start": 436,
-          "end": 489,
-          "isCollapsed": false
-        },
-        {
-          "start": 503,
-          "end": 577,
-          "isCollapsed": false
-        }
-      ]
-    },
-    {
-      "mode": 3,
       "name": "toUppercase",
       "nodes": [
         {
@@ -86,6 +60,42 @@
         {
           "start": 28,
           "end": 218,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "splitString",
+      "nodes": [
+        {
+          "start": 155,
+          "end": 911,
+          "isCollapsed": false
+        },
+        {
+          "start": 228,
+          "end": 903,
+          "isCollapsed": false
+        },
+        {
+          "start": 305,
+          "end": 903,
+          "isCollapsed": false
+        },
+        {
+          "start": 458,
+          "end": 892,
+          "isCollapsed": false
+        },
+        {
+          "start": 534,
+          "end": 591,
+          "isCollapsed": false
+        },
+        {
+          "start": 607,
+          "end": 685,
           "isCollapsed": false
         }
       ]

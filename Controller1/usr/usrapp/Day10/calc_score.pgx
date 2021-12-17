@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="calc_score">
+    <Locals>
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  append(nCompletion)
+  
+  for l_nElement = (size(sQueue)-1) to 0 step -1
+  
+    if sQueue[l_nElement] == "("
+      nCompletion[size(nCompletion)-2] = 5*nCompletion[size(nCompletion)-2] + 1
+    endIf
+    if sQueue[l_nElement] == "["
+      nCompletion[size(nCompletion)-2] = 5*nCompletion[size(nCompletion)-2] + 2
+    endIf
+    if sQueue[l_nElement] == "{"
+      nCompletion[size(nCompletion)-2] = 5*nCompletion[size(nCompletion)-2] + 3
+    endIf
+    if sQueue[l_nElement] == "<"
+      nCompletion[size(nCompletion)-2] = 5*nCompletion[size(nCompletion)-2] + 4
+    endIf
+    
+  endFor
+  
+  
+end]]></Code>
+  </Program>
+</Programs>

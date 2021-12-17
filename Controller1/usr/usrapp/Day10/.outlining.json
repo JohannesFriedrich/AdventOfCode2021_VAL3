@@ -1,0 +1,131 @@
+﻿{
+  "programs": [
+    {
+      "mode": 3,
+      "name": "calc_score",
+      "nodes": [
+        {
+          "start": 36,
+          "end": 591,
+          "isCollapsed": false
+        },
+        {
+          "start": 90,
+          "end": 208,
+          "isCollapsed": false
+        },
+        {
+          "start": 213,
+          "end": 331,
+          "isCollapsed": false
+        },
+        {
+          "start": 336,
+          "end": 454,
+          "isCollapsed": false
+        },
+        {
+          "start": 459,
+          "end": 577,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": [
+        {
+          "start": 293,
+          "end": 1643,
+          "isCollapsed": false
+        },
+        {
+          "start": 394,
+          "end": 1634,
+          "isCollapsed": false
+        },
+        {
+          "start": 458,
+          "end": 1623,
+          "isCollapsed": false
+        },
+        {
+          "start": 760,
+          "end": 1611,
+          "isCollapsed": false
+        },
+        {
+          "start": 972,
+          "end": 1602,
+          "isCollapsed": false
+        },
+        {
+          "start": 1364,
+          "end": 1588,
+          "isCollapsed": false
+        },
+        {
+          "start": 1719,
+          "end": 2047,
+          "isCollapsed": false
+        },
+        {
+          "start": 1762,
+          "end": 1824,
+          "isCollapsed": false
+        },
+        {
+          "start": 1829,
+          "end": 1892,
+          "isCollapsed": false
+        },
+        {
+          "start": 1897,
+          "end": 1962,
+          "isCollapsed": false
+        },
+        {
+          "start": 1967,
+          "end": 2033,
+          "isCollapsed": false
+        },
+        {
+          "start": 2157,
+          "end": 3511,
+          "isCollapsed": false
+        },
+        {
+          "start": 2279,
+          "end": 3443,
+          "isCollapsed": false
+        },
+        {
+          "start": 2343,
+          "end": 3432,
+          "isCollapsed": false
+        },
+        {
+          "start": 2645,
+          "end": 3420,
+          "isCollapsed": false
+        },
+        {
+          "start": 2857,
+          "end": 3420,
+          "isCollapsed": false
+        },
+        {
+          "start": 3276,
+          "end": 3406,
+          "isCollapsed": false
+        },
+        {
+          "start": 3448,
+          "end": 3502,
+          "isCollapsed": false
+        }
+      ]
+    }
+  ]
+}
