@@ -50,11 +50,6 @@
     },
     {
       "mode": 3,
-      "name": "start",
-      "nodes": []
-    },
-    {
-      "mode": 3,
       "name": "toLowercase",
       "nodes": [
         {
@@ -99,6 +94,27 @@
           "isCollapsed": false
         }
       ]
+    },
+    {
+      "mode": 3,
+      "name": "replacePattern",
+      "nodes": [
+        {
+          "start": 116,
+          "end": 366,
+          "isCollapsed": false
+        },
+        {
+          "start": 189,
+          "end": 321,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": []
     }
   ]
 }

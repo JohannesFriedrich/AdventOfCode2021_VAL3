@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="fold">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sDirection" type="string" xsi:type="element" />
+      <Parameter name="x_nEdge" type="num" xsi:type="element" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nDim" type="num" xsi:type="array" size="2" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  if x_sDirection == "x"
+    // 0123456 7 891011121314
+    call util:extractGrid(nGrid,1,0,x_nEdge-1, nLeftMatrix)
+    call util:extractGrid(nGrid,1,size(nGrid,1)-1,x_nEdge+1, nRightMatrix)
+  else
+    call util:extractGrid(nGrid,2,0,x_nEdge-1, nLeftMatrix)
+    call util:extractGrid(nGrid,2,size(nGrid,2)-1,x_nEdge+1, nRightMatrix)    
+  endIf
+  
+  call mat:add(nLeftMatrix, nRightMatrix, nGrid)
+  
+  // Set to one, if addition will give results > 1
+  for l_nDim[0] = 0 to size(nGrid,1)-1
+    for l_nDim[1] = 0 to size(nGrid,2) -1
+      if nGrid[l_nDim[0], l_nDim[1]] > 1
+        nGrid[l_nDim[0], l_nDim[1]] = 1
+      endIf
+    endFor
+  endFor
+  
+  
+end]]></Code>
+  </Program>
+</Programs>

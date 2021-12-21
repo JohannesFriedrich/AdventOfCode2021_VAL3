@@ -2,20 +2,19 @@
 <Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
   <Parameters version="s8.13.1Cs9_BS2800" stackSize="5000" millimeterUnit="true" />
   <Programs>
-    <Program file="replacePattern.pgx" />
-    <Program file="splitString.pgx" />
-    <Program file="splitWord.pgx" />
+    <Program file="fold.pgx" />
     <Program file="start.pgx" />
     <Program file="stop.pgx" />
-    <Program file="toLowercase.pgx" />
-    <Program file="toUppercase.pgx" />
-    <Program file="trimString.pgx" />
   </Programs>
   <Database>
-    <Data file="string.dtx" />
+    <Data file="Day13.dtx" />
   </Database>
   <Libraries>
-    <Library alias="utils" path="Disk://helpers/helpers.pjx" />
+    <Library alias="util" path="Disk://helpers/helpers.pjx" />
+    <Library alias="math" path="Disk://math/math.pjx" />
+    <Library alias="str" path="Disk://string/string.pjx" />
+    <Library alias="stat" path="Disk://statistics/statistics.pjx" />
+    <Library alias="mat" path="Disk://matrix/matrix.pjx" />
   </Libraries>
   <Types>
     <Type name="lists" path="Disk://types/lists/lists.pjx" />

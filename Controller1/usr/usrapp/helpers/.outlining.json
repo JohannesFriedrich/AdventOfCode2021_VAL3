@@ -374,22 +374,6 @@
     },
     {
       "mode": 3,
-      "name": "start",
-      "nodes": [
-        {
-          "start": 1459,
-          "end": 1633,
-          "isCollapsed": false
-        },
-        {
-          "start": 1500,
-          "end": 1624,
-          "isCollapsed": false
-        }
-      ]
-    },
-    {
-      "mode": 3,
       "name": "colSum",
       "nodes": [
         {
@@ -421,6 +405,134 @@
         {
           "start": 331,
           "end": 401,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "max_",
+      "nodes": [
+        {
+          "start": 32,
+          "end": 132,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "min_",
+      "nodes": [
+        {
+          "start": 31,
+          "end": 131,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "extractCol",
+      "nodes": [
+        {
+          "start": 111,
+          "end": 239,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "extractRow",
+      "nodes": [
+        {
+          "start": 109,
+          "end": 237,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "extractRows",
+      "nodes": [
+        {
+          "start": 163,
+          "end": 330,
+          "isCollapsed": false
+        },
+        {
+          "start": 204,
+          "end": 321,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "printNum2d",
+      "nodes": [
+        {
+          "start": 11,
+          "end": 256,
+          "isCollapsed": false
+        },
+        {
+          "start": 118,
+          "end": 232,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "extractGrid",
+      "nodes": [
+        {
+          "start": 109,
+          "end": 867,
+          "isCollapsed": false
+        },
+        {
+          "start": 273,
+          "end": 472,
+          "isCollapsed": false
+        },
+        {
+          "start": 320,
+          "end": 427,
+          "isCollapsed": false
+        },
+        {
+          "start": 485,
+          "end": 859,
+          "isCollapsed": false
+        },
+        {
+          "start": 660,
+          "end": 859,
+          "isCollapsed": false
+        },
+        {
+          "start": 707,
+          "end": 814,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": [
+        {
+          "start": 1459,
+          "end": 1633,
+          "isCollapsed": false
+        },
+        {
+          "start": 1500,
+          "end": 1624,
           "isCollapsed": false
         }
       ]

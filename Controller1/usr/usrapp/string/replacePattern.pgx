@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="replacePattern" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sInput" type="string" xsi:type="array" use="reference" />
+      <Parameter name="x_sPattern" type="string" xsi:type="element" />
+      <Parameter name="x_sReplace" type="string" xsi:type="element" />
+      <Parameter name="x_sResult" type="string" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nLength" type="num" xsi:type="array" size="1" />
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_sText" type="string" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_nLength = size(x_sInput)
+  resize(x_sResult,1,1)
+  x_sResult = ""
+  resize(x_sResult,1,l_nLength)
+  
+  for l_nElement = 0 to l_nLength-1
+    l_sText = x_sInput[l_nElement]
+    while find(l_sText,x_sPattern)!=-1
+      l_sText = replace(l_sText,x_sReplace,len(x_sPattern),find(l_sText,x_sPattern))
+    endWhile
+    x_sResult[l_nElement] = l_sText
+  endFor
+  
+end]]></Code>
+  </Program>
+</Programs>

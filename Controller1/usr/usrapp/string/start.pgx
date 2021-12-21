@@ -18,6 +18,8 @@
   
   call toUppercase(sInput[1], sResult)
   
+  call replacePattern(sInput, "r", "HGT", sResult)
+  
 end]]></Code>
   </Program>
 </Programs>

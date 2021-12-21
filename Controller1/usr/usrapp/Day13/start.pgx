@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_bBool" type="bool" xsi:type="array" size="1" />
+      <Local name="l_nXMax" type="num" xsi:type="array" size="1" />
+      <Local name="l_nYMax" type="num" xsi:type="array" size="1" />
+      <Local name="l_bFolds" type="bool" xsi:type="array" size="1" />
+      <Local name="l_nFoldCounter" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // read file
+  call util:readFile("Disk://input_day13.txt", sInput)
+  
+  // find empty line and devide between grid and folds
+  l_bFolds = false
+  l_nFoldCounter = 0
+  for l_nElement = 0 to size(sInput)-1
+    if sInput[l_nElement] == ""
+      l_bFolds = true
+    endIf
+    if l_bFolds
+      append(sFolds)
+      l_nFoldCounter = l_nFoldCounter+1
+      sFolds[l_nFoldCounter] = sInput[l_nElement] 
+    else
+      append(sGrid)
+      sGrid[l_nElement+1] = sInput[l_nElement]
+    endIf
+
+  endFor
+  
+  // delete empty entries
+  delete(sGrid[0])
+  delete(sFolds[1])
+  delete(sFolds[0])
+  
+  // get coordinates from sGrid
+  call str:splitString(sGrid,",", lResult)
+  
+  // prepare coordinates
+  resize(nXcoord, 1, size(lResult))
+  resize(nYcoord, 1, size(lResult))
+  
+  // convert string from coordintes to num
+  for l_nElement = 0 to size(lResult)-1
+    toNum(lResult[l_nElement].sString[0],nXcoord[l_nElement], l_bBool)
+    toNum(lResult[l_nElement].sString[1],nYcoord[l_nElement], l_bBool)
+  endFor
+  
+  // split folds
+  call str:replacePattern(sFolds, "fold along ", "", sResult)
+  call str:splitString(sResult, "=", lResult)
+  
+  // extract folds
+  resize(sFolds, 1, size(lResult))
+  resize(nFolds, 1, size(lResult))
+  l_nXMax = l_nYMax = 0
+  for l_nElement = 0 to size(lResult)-1
+    sFolds[l_nElement] = lResult[l_nElement].sString[0]
+    call util:vec2num(lResult[l_nElement].sString[1], nFolds_)
+    nFolds[l_nElement] = nFolds_
+    if sFolds[l_nElement] == "x"
+      l_nXMax = max(l_nXMax, nFolds_)
+    else
+      l_nYMax = max(l_nYMax, nFolds_)
+    endIf
+    
+  endFor
+  
+  // prepare grid
+  resize(nGrid,1,l_nXMax*2+1)
+  resize(nGrid,2,l_nYMax*2+1)
+  
+  for l_nElement = 0 to size(nXcoord)-1
+    nGrid[nXcoord[l_nElement], nYcoord[l_nElement]] = 1
+  endFor
+  
+  // PUZZLE 1: just fold one time
+  call fold(sFolds[0], nFolds[0])
+  
+  nRowSum = 0
+  call util:rowSum(nGrid, nRowSum)
+  call math:sum(nRowSum, nResult)
+  call util:printNum(nResult)
+  // 687
+  
+  
+  // Puzzle 2
+  // prepare grid
+  resize(nGrid,1,l_nXMax*2+1)
+  resize(nGrid,2,l_nYMax*2+1)
+  
+  for l_nElement = 0 to size(nXcoord)-1
+    nGrid[nXcoord[l_nElement], nYcoord[l_nElement]] = 1
+  endFor
+  
+  for l_nElement = 0 to size(nFolds)-1
+    call fold(sFolds[l_nElement], nFolds[l_nElement])
+  endFor
+  
+  call util:printNum2d(nGrid)
+  // FGKCKBZG
+  
+  
+end
+]]></Code>
+  </Program>
+</Programs>
