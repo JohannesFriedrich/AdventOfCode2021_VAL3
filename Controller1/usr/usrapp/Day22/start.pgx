@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nRound" type="num" xsi:type="array" size="1" />
+      <Local name="l_nDieEyes" type="num" xsi:type="array" size="1" />
+      <Local name="l_bPlayer1Plays" type="bool" xsi:type="array" size="1" />
+      <Local name="l_nAdd" type="num" xsi:type="array" size="1" />
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nCoord" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRange" type="num" xsi:type="array" size="1" />
+      <Local name="l_nCommand" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRangeX" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRangeZ" type="num" xsi:type="array" size="1" />
+      <Local name="l_nRangeY" type="num" xsi:type="array" size="1" />
+      <Local name="l_bInRange" type="bool" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  call util:readFile("input_day22.txt",  sInput)
+  // sInput[0] = "on x=10..12,y=10..12,z=10..12"
+  
+  call str:splitString(sInput," ", lResult)
+  
+  resize(bGrid,1,101)
+  resize(bGrid,2,101)
+  resize(bGrid,3,101)
+
+  resize(sCommand,1,size(lResult))
+  for l_nElement = 0 to size(lResult)-1
+    ? l_nElement
+    sCommand[l_nElement] = lResult[l_nElement].sString[0]
+    call str:splitString(lResult[l_nElement].sString[1], ",", lResultCoord)
+    
+    call str:replacePattern(lResultCoord.sString[0],"x=", "", sCoord_X)
+    call str:replacePattern(lResultCoord.sString[1],"y=", "", sCoord_Y)
+    call str:replacePattern(lResultCoord.sString[2],"z=", "", sCoord_Z)
+    
+    resize(sCoord_X,1,1)
+    resize(sCoord_Y,1,1)
+    resize(sCoord_Z,1,1)
+    
+    // get coordinates as number
+    call str:splitString(sCoord_X, "..", lResultCoord)
+    call util:vec2num(lResultCoord.sString, nCoord_X)
+    
+    if nCoord_X[0] >= -50 and nCoord_X[1]<= 50
+      l_bInRange = true
+      call util:range(nCoord_X[0]+50, nCoord_X[1]+1+50, 1, nRangeX)
+    else
+      l_bInRange = false
+    endIf
+    
+    if l_bInRange 
+      call str:splitString(sCoord_Y, "..", lResultCoord)
+      call util:vec2num(lResultCoord.sString, nCoord_Y)
+      if nCoord_Y[0] >= -50 and nCoord_Y[1]<= 50
+        l_bInRange = true
+        call util:range(nCoord_Y[0]+50, nCoord_Y[1]+1+50, 1, nRangeY)
+      else
+        l_bInRange = false
+      endIf
+    endIf
+    
+    if l_bInRange
+      call str:splitString(sCoord_Z, "..", lResultCoord)
+      call util:vec2num(lResultCoord.sString, nCoord_Z)
+      if nCoord_Z[0] >= -50 and nCoord_Z[1]<= 50
+        l_bInRange = true
+        call util:range(nCoord_Z[0]+50, nCoord_Z[1]+1+50, 1, nRangeZ)
+      else
+        l_bInRange = false
+      endIf
+    endIf
+    
+    if l_bInRange
+      // fill 3d-matrix
+      for l_nRangeX = 0 to size(nRangeX)-1
+        for l_nRangeY = 0 to size(nRangeY)-1
+          for l_nRangeZ = 0 to size(nRangeZ)-1
+            if sCommand[l_nElement] == "on"
+              bGrid[nRangeX[l_nRangeX], nRangeY[l_nRangeY], nRangeZ[l_nRangeZ]] = true
+            else
+              bGrid[nRangeX[l_nRangeX], nRangeY[l_nRangeY], nRangeZ[l_nRangeZ]] = false
+            endIf
+          endFor
+        endFor
+      endFor
+    endIf
+    
+  endFor
+  
+  // count TRUEs
+  call util:countBool3D(bGrid, nResult)
+  call util:printNum(nResult)
+  // 603661
+
+end
+]]></Code>
+  </Program>
+</Programs>

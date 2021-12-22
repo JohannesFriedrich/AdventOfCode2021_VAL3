@@ -10,6 +10,8 @@
     <Program file="colSum.pgx" />
     <Program file="compare.pgx" />
     <Program file="countBool.pgx" />
+    <Program file="countBool2D.pgx" />
+    <Program file="countBool3D.pgx" />
     <Program file="extractCol.pgx" />
     <Program file="extractGrid.pgx" />
     <Program file="extractNum.pgx" />
