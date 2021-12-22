@@ -26,6 +26,7 @@
     <Program file="printStr.pgx" />
     <Program file="range.pgx" />
     <Program file="readFile.pgx" />
+    <Program file="repeat.pgx" />
     <Program file="rowSum.pgx" />
     <Program file="start.pgx" />
     <Program file="stop.pgx" />

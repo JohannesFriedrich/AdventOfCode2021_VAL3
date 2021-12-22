@@ -118,6 +118,10 @@
   call extractGrid(nMatrix, 2, 3,0,nResult2D)
   call printNum2d(nResult2D)
   
+  ? "## test repeat(nTest2,3)"
+  call repeat(nTest2,3, nResult)
+  call printNum(nResult)
+  
 end  ]]></Code>
   </Program>
 </Programs>

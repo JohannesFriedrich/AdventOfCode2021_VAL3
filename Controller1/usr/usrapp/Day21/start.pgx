@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nRound" type="num" xsi:type="array" size="1" />
+      <Local name="l_nDieEyes" type="num" xsi:type="array" size="1" />
+      <Local name="l_bPlayer1Plays" type="bool" xsi:type="array" size="1" />
+      <Local name="l_nAdd" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  nStart[0] = 1
+  nStart[1] = 3
+  
+  call util:range(1,101,1, nEyes)
+  call util:repeat(nEyes, 19, nDice)
+  
+  l_bPlayer1Plays = true
+  l_nRound = 0
+  nPointsP1_virt = nStart[0]
+  nPointsP2_virt = nStart[1]
+  nPointsP1_sum = nPointsP2_sum = 0
+  do
+    
+    l_nDieEyes = nDice[l_nRound] + nDice[l_nRound+1] + nDice[l_nRound+2]
+    
+    if l_bPlayer1Plays 
+      nPointsP1_virt = nPointsP1_virt + l_nDieEyes
+      l_nAdd = sel(nPointsP1_virt%10 == 0, 10,nPointsP1_virt%10)
+      nPointsP1_sum = nPointsP1_sum + l_nAdd
+      l_bPlayer1Plays = false
+    else
+      nPointsP2_virt = nPointsP2_virt + l_nDieEyes
+      l_nAdd = sel(nPointsP2_virt%10 == 0, 10,nPointsP2_virt%10)
+      nPointsP2_sum = nPointsP2_sum + l_nAdd
+      l_bPlayer1Plays = true
+    endIf
+    
+    l_nRound = l_nRound+3
+  until(nPointsP1_sum >= 1000 or nPointsP2_sum >= 1000)
+  
+  nResult = l_nRound*sel(nPointsP1_sum<nPointsP2_sum, nPointsP1_sum, nPointsP2_sum)
+  call util:printNum(nResult)
+  // 897798
+  
+end
+]]></Code>
+  </Program>
+</Programs>
