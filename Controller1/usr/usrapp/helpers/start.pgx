@@ -8,6 +8,7 @@
       <Local name="l_nCols" type="num" xsi:type="array" size="1" />
       <Local name="l_nCounter" type="num" xsi:type="array" size="1" />
       <Local name="l_nIndices" type="num" xsi:type="array" size="2" />
+      <Local name="l_sString" type="string" xsi:type="array" size="10" />
     </Locals>
     <Code><![CDATA[begin
   
@@ -121,6 +122,22 @@
   ? "## test repeat(nTest2,3)"
   call repeat(nTest2,3, nResult)
   call printNum(nResult)
+  
+  ? "## test uniqueStr()"
+  l_sString[0] = "A"
+  l_sString[1] = "B"
+  l_sString[2] = "C"
+  l_sString[3] = "A"
+  l_sString[4] = "B"
+  l_sString[5] = "B"
+  l_sString[6] = "a"
+  l_sString[7] = "D"
+  l_sString[8] = "V"
+  l_sString[9] = "G"
+  
+  call uniqueStr(l_sString, sResult)
+  call printStr(sResult)
+  
   
 end  ]]></Code>
   </Program>

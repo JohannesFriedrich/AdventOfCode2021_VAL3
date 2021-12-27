@@ -20,6 +20,13 @@
   
   call replacePattern(sInput, "r", "HGT", sResult)
   
+  ? "## test sub: sub(sInput, 2,4,sResult)"
+  call subString(sInput, 2,10,sResult)
+  call utils:printStr(sResult)
+ 
+   ? "## test sub: removeString(sInput, 2,3,sResult)"
+  call removeString(sInput, 2,3,sResult)
+  call utils:printStr(sResult)
 end]]></Code>
   </Program>
 </Programs>

@@ -10,29 +10,35 @@
       <Local name="l_nElement" type="num" xsi:type="array" size="1" />
       <Local name="l_nLength" type="num" xsi:type="array" size="1" />
       <Local name="l_sString" type="string" xsi:type="array" size="1" />
+      <Local name="l_nBuffer" type="num" xsi:type="array" size="1" />
     </Locals>
     <Code><![CDATA[begin
   
-  l_nLength = size(x_nInput)
-  l_nCoutner = 0
-  resize(x_nResult,1,1)
-  resize(sStringBuffer,1,1)
+//  l_nLength = size(x_sInput)
+//  l_nCoutner = 0
+//  resize(x_sResult,1,1)
+//  resize(sStringBuffer,1,1)
   
-  for l_nElement = 0 to l_nLength
-    if l_nCoutner ==0
-      sStringBuffer[l_nCoutner] = toString(".6",x_nInput[l_nElement])
-      l_nCoutner = l_nCoutner+1
-    else
-      l_sString =  toString(".6",x_nInput[l_nElement])
+//  for l_nElement = 0 to l_nLength-1
+    
+//    if l_nElement = 0
+//      append(x_sResult)
+//      x_sResult[size(x_sResult)-1] = x_nInput[l_nElement]
+//    else
       
-      //call 
+//      for l_nBuffer = 0 to size(x_sResult)-1
+//        if x_sInput[l_nElement] != x_sResult[l_nBuffer]
+//          append(x_sResult)
+//          x_sResult[size(x_sResult)-1] = x_nInput[l_nElement]
+//        endIf
+        
+//      endFor
       
-    endIf
+//    endIf
     
-    
-    
-    x_nResult[l_nCoutner] = l_nElement
-  endFor
+//  endFor
+  
+//  delete(x_sResult[0])
   
 end]]></Code>
   </Program>

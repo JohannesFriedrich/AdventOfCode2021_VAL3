@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://www.staubli.com/robotics/VAL3/Project/3">
+  <Parameters version="s8.13.1Cs9_BS2800" stackSize="5000" millimeterUnit="true" />
+  <Programs>
+    <Program file="checkCombo.pgx" />
+    <Program file="start.pgx" />
+    <Program file="stop.pgx" />
+    <Program file="unique.pgx" />
+  </Programs>
+  <Database>
+    <Data file="Day14.dtx" />
+  </Database>
+  <Libraries>
+    <Library alias="util" path="Disk://helpers/helpers.pjx" />
+    <Library alias="math" path="Disk://math/math.pjx" />
+    <Library alias="str" path="Disk://string/string.pjx" />
+    <Library alias="stat" path="Disk://statistics/statistics.pjx" />
+  </Libraries>
+  <Types>
+    <Type name="lists" path="Disk://types/lists/lists.pjx" />
+    <Type name="lists_string_num" path="Disk://types/lists_string_num/lists_string_num.pjx" />
+  </Types>
+</Project>

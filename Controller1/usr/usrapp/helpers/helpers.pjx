@@ -9,6 +9,7 @@
     <Program file="bool2num.pgx" />
     <Program file="colSum.pgx" />
     <Program file="compare.pgx" />
+    <Program file="compareStr.pgx" />
     <Program file="countBool.pgx" />
     <Program file="countBool2D.pgx" />
     <Program file="countBool3D.pgx" />
@@ -33,6 +34,7 @@
     <Program file="start.pgx" />
     <Program file="stop.pgx" />
     <Program file="uniqueNum.pgx" />
+    <Program file="uniqueStr.pgx" />
     <Program file="vec2num.pgx" />
     <Program file="vecMax.pgx" />
   </Programs>

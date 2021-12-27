@@ -77,97 +77,6 @@
     },
     {
       "mode": 3,
-      "name": "compare",
-      "nodes": [
-        {
-          "start": 98,
-          "end": 1048,
-          "isCollapsed": false
-        },
-        {
-          "start": 117,
-          "end": 341,
-          "isCollapsed": false
-        },
-        {
-          "start": 132,
-          "end": 331,
-          "isCollapsed": false
-        },
-        {
-          "start": 174,
-          "end": 318,
-          "isCollapsed": false
-        },
-        {
-          "start": 260,
-          "end": 304,
-          "isCollapsed": false
-        },
-        {
-          "start": 346,
-          "end": 572,
-          "isCollapsed": false
-        },
-        {
-          "start": 362,
-          "end": 562,
-          "isCollapsed": false
-        },
-        {
-          "start": 404,
-          "end": 549,
-          "isCollapsed": false
-        },
-        {
-          "start": 491,
-          "end": 535,
-          "isCollapsed": false
-        },
-        {
-          "start": 577,
-          "end": 801,
-          "isCollapsed": false
-        },
-        {
-          "start": 592,
-          "end": 791,
-          "isCollapsed": false
-        },
-        {
-          "start": 634,
-          "end": 778,
-          "isCollapsed": false
-        },
-        {
-          "start": 720,
-          "end": 764,
-          "isCollapsed": false
-        },
-        {
-          "start": 810,
-          "end": 1036,
-          "isCollapsed": false
-        },
-        {
-          "start": 826,
-          "end": 1026,
-          "isCollapsed": false
-        },
-        {
-          "start": 868,
-          "end": 1013,
-          "isCollapsed": false
-        },
-        {
-          "start": 955,
-          "end": 999,
-          "isCollapsed": false
-        }
-      ]
-    },
-    {
-      "mode": 3,
       "name": "printBool",
       "nodes": [
         {
@@ -261,27 +170,6 @@
         {
           "start": 291,
           "end": 317,
-          "isCollapsed": false
-        }
-      ]
-    },
-    {
-      "mode": 3,
-      "name": "uniqueNum",
-      "nodes": [
-        {
-          "start": 112,
-          "end": 432,
-          "isCollapsed": false
-        },
-        {
-          "start": 148,
-          "end": 369,
-          "isCollapsed": false
-        },
-        {
-          "start": 272,
-          "end": 352,
           "isCollapsed": false
         }
       ]
@@ -523,22 +411,6 @@
     },
     {
       "mode": 3,
-      "name": "start",
-      "nodes": [
-        {
-          "start": 1459,
-          "end": 1633,
-          "isCollapsed": false
-        },
-        {
-          "start": 1500,
-          "end": 1624,
-          "isCollapsed": false
-        }
-      ]
-    },
-    {
-      "mode": 3,
       "name": "countBool",
       "nodes": [
         {
@@ -596,6 +468,200 @@
         {
           "start": 168,
           "end": 268,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "uniqueNum",
+      "nodes": []
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": [
+        {
+          "start": 1459,
+          "end": 1633,
+          "isCollapsed": false
+        },
+        {
+          "start": 1500,
+          "end": 1624,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "uniqueStr",
+      "nodes": [
+        {
+          "start": 84,
+          "end": 731,
+          "isCollapsed": false
+        },
+        {
+          "start": 143,
+          "end": 717,
+          "isCollapsed": false
+        },
+        {
+          "start": 248,
+          "end": 701,
+          "isCollapsed": false
+        },
+        {
+          "start": 266,
+          "end": 569,
+          "isCollapsed": false
+        },
+        {
+          "start": 313,
+          "end": 547,
+          "isCollapsed": false
+        },
+        {
+          "start": 396,
+          "end": 533,
+          "isCollapsed": false
+        },
+        {
+          "start": 583,
+          "end": 701,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "compare",
+      "nodes": [
+        {
+          "start": 98,
+          "end": 1275,
+          "isCollapsed": false
+        },
+        {
+          "start": 117,
+          "end": 341,
+          "isCollapsed": false
+        },
+        {
+          "start": 132,
+          "end": 331,
+          "isCollapsed": false
+        },
+        {
+          "start": 174,
+          "end": 318,
+          "isCollapsed": false
+        },
+        {
+          "start": 260,
+          "end": 304,
+          "isCollapsed": false
+        },
+        {
+          "start": 346,
+          "end": 572,
+          "isCollapsed": false
+        },
+        {
+          "start": 362,
+          "end": 562,
+          "isCollapsed": false
+        },
+        {
+          "start": 404,
+          "end": 549,
+          "isCollapsed": false
+        },
+        {
+          "start": 491,
+          "end": 535,
+          "isCollapsed": false
+        },
+        {
+          "start": 577,
+          "end": 801,
+          "isCollapsed": false
+        },
+        {
+          "start": 592,
+          "end": 791,
+          "isCollapsed": false
+        },
+        {
+          "start": 634,
+          "end": 778,
+          "isCollapsed": false
+        },
+        {
+          "start": 720,
+          "end": 764,
+          "isCollapsed": false
+        },
+        {
+          "start": 806,
+          "end": 1032,
+          "isCollapsed": false
+        },
+        {
+          "start": 822,
+          "end": 1022,
+          "isCollapsed": false
+        },
+        {
+          "start": 864,
+          "end": 1009,
+          "isCollapsed": false
+        },
+        {
+          "start": 951,
+          "end": 995,
+          "isCollapsed": false
+        },
+        {
+          "start": 1037,
+          "end": 1263,
+          "isCollapsed": false
+        },
+        {
+          "start": 1053,
+          "end": 1253,
+          "isCollapsed": false
+        },
+        {
+          "start": 1095,
+          "end": 1240,
+          "isCollapsed": false
+        },
+        {
+          "start": 1182,
+          "end": 1226,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "compareStr",
+      "nodes": [
+        {
+          "start": 98,
+          "end": 274,
+          "isCollapsed": false
+        },
+        {
+          "start": 136,
+          "end": 265,
+          "isCollapsed": false
+        },
+        {
+          "start": 215,
+          "end": 255,
           "isCollapsed": false
         }
       ]

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="start">
+    <Locals>
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nSplit" type="num" xsi:type="array" size="1" />
+      <Local name="l_nStep" type="num" xsi:type="array" size="1" />
+      <Local name="l_nLetter" type="num" xsi:type="array" size="1" />
+      <Local name="l_nMax" type="num" xsi:type="array" size="1" />
+      <Local name="l_nMin" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  // read file
+  call util:readFile("Disk://input_day14.txt", sInput)
+  // sInput[0] = "NNCB"
+  
+  // get the starting string
+  sStart = sInput[0]
+  
+  // remove starting string and empty line
+  delete(sInput[1])
+  delete(sInput[0])
+  
+  call str:splitString(sInput," -> ", lResult)
+  // lResult.sString[0] = "CH"
+  // lResult.sString[1] = "B"
+  
+  // PUZZLE 1
+  call str:splitWord(sStart, lSplit)
+  
+  // loop over all steps
+  for l_nStep = 1 to 10
+    resize(lStrNum,1,1)
+    lStrNum.sString = ""
+    lStrNum.nNum = -99
+    for l_nSplit = size(lSplit.sString)-2 to 0 step -1
+      
+      sCombo[0] = lSplit.sString[l_nSplit]
+      sCombo[1] = lSplit.sString[l_nSplit+1]
+    
+      call checkCombo(sResult)
+      
+      if sResult != ""
+        append(lStrNum)
+        lStrNum[size(lStrNum)-1].sString = sResult
+        lStrNum[size(lStrNum)-1].nNum = l_nSplit+1
+      endIf
+    endFor
+    
+    // glue results together
+    delete(lStrNum[0])
+    for l_nElement = 0 to size(lStrNum)-1
+      insert(lSplit.sString[lStrNum[l_nElement].nNum])
+      lSplit.sString[lStrNum[l_nElement].nNum] = lStrNum[l_nElement].sString
+    endFor
+    
+  endFor
+  
+  // get unique elements in result
+  call unique(sUnique)
+  resize(nUnique,1,1)
+  nUnique[0] = 0
+  resize(nUnique,1,size(sUnique))
+  
+  // calculate appearance of each unique element
+  for l_nElement = 0 to size(lSplit.sString)-1
+    for l_nLetter = 0 to size(sUnique)-1
+      if lSplit.sString[l_nElement] == sUnique[l_nLetter]
+        nUnique[l_nLetter] = nUnique[l_nLetter] +1
+      endIf
+    endFor
+  endFor
+  
+  call util:max_(nUnique,l_nMax)
+  call util:min_(nUnique,l_nMin)
+  
+  nResult = l_nMax-l_nMin
+  call util:printNum(nResult)
+  // 2447
+  
+end]]></Code>
+  </Program>
+</Programs>

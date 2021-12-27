@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Programs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.staubli.com/robotics/VAL3/Program/2">
+  <Program name="uniqueStr" access="public">
+    <Parameters xmlns="http://www.staubli.com/robotics/VAL3/Param/1">
+      <Parameter name="x_sInput" type="string" xsi:type="array" use="reference" />
+      <Parameter name="x_sResult" type="string" xsi:type="array" use="reference" />
+    </Parameters>
+    <Locals>
+      <Local name="l_nCoutner" type="num" xsi:type="array" size="1" />
+      <Local name="l_nElement" type="num" xsi:type="array" size="1" />
+      <Local name="l_nLength" type="num" xsi:type="array" size="1" />
+      <Local name="l_sString" type="string" xsi:type="array" size="1" />
+      <Local name="l_nBuffer" type="num" xsi:type="array" size="1" />
+      <Local name="l_bDone" type="bool" xsi:type="array" size="1" />
+      <Local name="l_bFound" type="bool" xsi:type="array" size="1" />
+      <Local name="l_nMarker" type="num" xsi:type="array" size="1" />
+    </Locals>
+    <Code><![CDATA[begin
+  
+  l_nLength = size(x_sInput)
+  l_nCoutner = 0
+  resize(x_sResult,1,1)
+  
+  for l_nElement = 0 to l_nLength-1
+    l_bFound = false
+    if l_nElement == 0
+      append(x_sResult)
+      x_sResult[size(x_sResult)-1] = x_sInput[l_nElement]
+    else
+      
+      for l_nBuffer = 0 to size(x_sResult)-1
+        if x_sInput[l_nElement] != x_sResult[l_nBuffer]
+          l_bFound = false
+        else
+          // break out of for-loop
+          l_bFound = true
+          l_nBuffer = size(x_sResult)+1
+          l_nMarker = l_nBuffer
+        endIf
+        
+      endFor
+      
+      if l_bFound == false
+        append(x_sResult)
+        x_sResult[size(x_sResult)-1] = x_sInput[l_nElement]
+      endIf
+      
+   endIf
+    
+  endFor
+  
+  delete(x_sResult[0])
+  
+end]]></Code>
+  </Program>
+</Programs>

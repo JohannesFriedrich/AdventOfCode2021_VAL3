@@ -45,9 +45,18 @@
         endIf
       endFor
     break
-        case "<="
+    case "<="
       for l_nElement = 0 to l_nLength-1
         if x_nInput[l_nElement] <= x_nCompareTo
+          x_bResult[l_nElement] = true
+        else
+          x_bResult[l_nElement] = false
+        endIf
+      endFor
+    break
+    case "=="
+      for l_nElement = 0 to l_nLength-1
+        if x_nInput[l_nElement] == x_nCompareTo
           x_bResult[l_nElement] = true
         else
           x_bResult[l_nElement] = false

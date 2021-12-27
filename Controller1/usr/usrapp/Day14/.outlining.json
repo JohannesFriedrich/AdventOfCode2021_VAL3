@@ -1,0 +1,102 @@
+﻿{
+  "programs": [
+    {
+      "mode": 3,
+      "name": "checkCombo",
+      "nodes": [
+        {
+          "start": 11,
+          "end": 194,
+          "isCollapsed": false
+        },
+        {
+          "start": 56,
+          "end": 184,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "unique",
+      "nodes": [
+        {
+          "start": 11,
+          "end": 655,
+          "isCollapsed": false
+        },
+        {
+          "start": 81,
+          "end": 641,
+          "isCollapsed": false
+        },
+        {
+          "start": 192,
+          "end": 625,
+          "isCollapsed": false
+        },
+        {
+          "start": 210,
+          "end": 487,
+          "isCollapsed": false
+        },
+        {
+          "start": 257,
+          "end": 465,
+          "isCollapsed": false
+        },
+        {
+          "start": 346,
+          "end": 451,
+          "isCollapsed": false
+        },
+        {
+          "start": 501,
+          "end": 625,
+          "isCollapsed": false
+        }
+      ]
+    },
+    {
+      "mode": 3,
+      "name": "start",
+      "nodes": [
+        {
+          "start": 437,
+          "end": 1151,
+          "isCollapsed": false
+        },
+        {
+          "start": 535,
+          "end": 895,
+          "isCollapsed": false
+        },
+        {
+          "start": 730,
+          "end": 884,
+          "isCollapsed": false
+        },
+        {
+          "start": 957,
+          "end": 1137,
+          "isCollapsed": false
+        },
+        {
+          "start": 1340,
+          "end": 1566,
+          "isCollapsed": false
+        },
+        {
+          "start": 1389,
+          "end": 1557,
+          "isCollapsed": false
+        },
+        {
+          "start": 1432,
+          "end": 1546,
+          "isCollapsed": false
+        }
+      ]
+    }
+  ]
+}
